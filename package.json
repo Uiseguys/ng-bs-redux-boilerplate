@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm version patch && node ./replace.build.ts && ng build --prod",
+    "build": "npm version patch && node ./replace.build.ts && ng build --prod -bh /src/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
