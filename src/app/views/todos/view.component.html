@@ -1,0 +1,11 @@
+<div [ngSwitch]="currentPath">
+  <div *ngSwitchCase="'app/navigation/TODOS'">
+    <h3>TODOS</h3>
+    <app-todo-collection (collectionItemClicked)="showDetailView($event)"></app-todo-collection>
+  </div>
+
+  <div *ngSwitchCase="'app/navigation/TODO_DETAIL'">
+    <h3>ToDo Detail</h3>
+    <app-todo-detail [itemId]="currentToDoId"></app-todo-detail>
+  </div>
+</div>
