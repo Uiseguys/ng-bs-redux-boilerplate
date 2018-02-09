@@ -1,11 +1,12 @@
 import { Action } from 'redux';
 import { LocalSettingsActions } from './actions';
+import { LocalStorageService } from '../../../shared/localStorage/localStorage.service'
 
 export interface LocalSettingsState {
   compactView: boolean;
 }
 
-const INITIAL_SETTINGS_STATE: any = {
+const INITIAL_SETTINGS_STATE: any = JSON.parse(localStorage.getItem('settings')) || {
   compactView: false
 };
 

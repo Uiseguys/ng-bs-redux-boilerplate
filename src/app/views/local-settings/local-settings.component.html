@@ -6,8 +6,6 @@ I am the SETTINGS component html
 
 <h2>User Settings</h2>
 <div *ngIf="settings | async as settings">
-   {{ settings.compactView | json }}
-
   <label for="compact_view">Compact View</label>
   <input #compactViewCB type="checkbox" name="compact_view"
       [checked]="settings.compactView"
