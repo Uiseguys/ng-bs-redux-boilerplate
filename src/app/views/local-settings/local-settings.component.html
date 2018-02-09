@@ -5,6 +5,9 @@ I am the SETTINGS component html
 <button (click)="changeLanguage('en')">change to 'en'</button>
 
 <h2>User Settings</h2>
+<div *ngIf="settings | async as settings">
+   {{ settings | json }}
+</div>
 <input #compactViewCB type="checkbox" name="compact_view"
     [checked]=""
     (change)="changeView(compactViewCB.checked)"> <label for="compact_view">Compact View</label>

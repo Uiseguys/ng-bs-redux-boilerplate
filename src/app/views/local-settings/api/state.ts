@@ -10,17 +10,34 @@ const INITIAL_SETTINGS_STATE: any = {
 };
 
 export function localSettingsReducers() {
-  return function reducer(
-      state: LocalSettingsState = INITIAL_SETTINGS_STATE,
-      action: Action): LocalSettingsState {
+  return function reducer(state: LocalSettingsState = INITIAL_SETTINGS_STATE,
+                          action: Action): LocalSettingsState {
+
+    switch (action.type) {
+      case LocalSettingsActions.SETTINGS_INITIALIZED:
+        return {
+          ...state,
+          compactView: false
+        };
+    }
+
+    switch (action.type) {
+      case LocalSettingsActions.SETTINGS_LOADED:
+        return {
+          ...state,
+          compactView: false
+        };
+    }
 
     switch (action.type) {
       case LocalSettingsActions.COMPACT_VIEW_ACTIVATED:
-        console.log('cea');
         return {
           ...state,
           compactView: true
         };
+    }
+
+    switch (action.type) {
       case LocalSettingsActions.COMPACT_VIEW_DEACTIVATED:
         return {
           ...state,

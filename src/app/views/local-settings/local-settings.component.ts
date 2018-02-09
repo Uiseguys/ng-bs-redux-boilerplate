@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nActions } from '../../shared/i18n/actions';
 
-import { select } from '@angular-redux/store';
+import { dispatch, select } from '@angular-redux/store';
 import { LocalSettingsActions } from './api/actions';
 
 @Component({
@@ -10,13 +10,14 @@ import { LocalSettingsActions } from './api/actions';
   styleUrls: ['./local-settings.component.scss']
 })
 export class LocalSettingsComponent implements OnInit {
-  @select() compactView;
+  @select() settings;
 
   constructor(private i18nActions: I18nActions,
               private settingsActions: LocalSettingsActions) {}
 
   ngOnInit() {
     console.log('LocalSettingsComponent initialized.');
+    this.settingsActions.settingsInitialized();
   }
 
   changeLanguage(lang) {

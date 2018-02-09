@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { ToDosModule } from '../features/todos/todos.module';
 import { ToDosViewComponent } from './todos/view.component';
+import { LocalSettingsActions } from './local-settings/api/actions';
 
 @NgModule({
   imports: [
@@ -36,7 +37,7 @@ import { ToDosViewComponent } from './todos/view.component';
     ToDosViewComponent,
   ],
   providers: [
-
+    LocalSettingsActions,
   ]
 })
 export class ViewsModule { }

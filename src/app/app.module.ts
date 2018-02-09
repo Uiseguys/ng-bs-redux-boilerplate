@@ -17,7 +17,6 @@ import { ViewsModule } from './views/views.module';
 import { NavigationModule } from './shared/navigation/navigation.module';
 import { I18nObservers } from './shared/i18n/observer';
 import { I18nActions } from './shared/i18n/actions';
-import { LocalSettingsActions } from './views/local-settings/api/actions';
 import { DashboardObservers } from './views/dashboard/api/observer';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/authorization/token.interceptor';
@@ -119,7 +118,6 @@ export const I18N_PROVIDERS = [
     DashboardObservers,
     ToDoObservers,
     I18nActions,
-    LocalSettingsActions,
     LocalSettingsObservers,
     AuthService,
     {

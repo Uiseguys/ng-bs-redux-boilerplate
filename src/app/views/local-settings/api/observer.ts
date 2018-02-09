@@ -11,16 +11,9 @@ export class LocalSettingsObservers {
 
   constructor(private settingsActions: LocalSettingsActions) {}
 
-  public onCompactViewActivated(): Epic<Action, any> {
-     return (action$, store) => action$
-       .ofType(LocalSettingsActions.COMPACT_VIEW_ACTIVATED)
-       .do((action: any) => { return; });
-   }
-
-   public onCompactViewDeactivated(): Epic<any, any> {
-      return (action$, store) => action$
-        .ofType(LocalSettingsActions.COMPACT_VIEW_DEACTIVATED)
-        .do((action: any) => { return; });
-    }
-
+  public createEpic(): Epic<Action, any> {
+    return (action$, store) => action$
+      .ofType(LocalSettingsActions.SETTINGS_INITIALIZED)
+        .mapTo({ type: LocalSettingsActions.SETTINGS_LOADED });
+  }
 }
