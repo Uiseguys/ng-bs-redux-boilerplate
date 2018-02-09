@@ -11,9 +11,4 @@ export class LocalSettingsObservers {
 
   constructor(private settingsActions: LocalSettingsActions) {}
 
-  public createEpic(): Epic<Action, any> {
-    return (action$, store) => action$
-      .ofType(LocalSettingsActions.SETTINGS_INITIALIZED)
-        .mapTo({ type: LocalSettingsActions.SETTINGS_LOADED });
-  }
 }

@@ -26,8 +26,6 @@ export class Middlewares {
 
       createEpicMiddleware(this.toDoObservers.onOverviewActivated()),
       createEpicMiddleware(this.toDoObservers.onDetailViewActivated()),
-
-      createEpicMiddleware(this.settingsObservers.createEpic()),
     ];
   }
 }

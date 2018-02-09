@@ -19,6 +19,6 @@ export const RootReducer = combineReducers({
   dashboard: dashboardStateReducers(),
   location: navigationReducer,
   i18n: i18nStateReducers(),
-  settings: localSettingsReducers,
+  settings: localSettingsReducers(),
   ... featureReducerMap
 });

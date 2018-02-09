@@ -17,15 +17,17 @@ export class LocalSettingsComponent implements OnInit {
 
   ngOnInit() {
     console.log('LocalSettingsComponent initialized.');
-    this.settingsActions.settingsInitialized();
   }
 
   changeLanguage(lang) {
     this.i18nActions.languageChange(lang);
   }
 
-  changeView(saveUsername) {
-    console.log(saveUsername);
+  activateCompactView() {
     this.settingsActions.compactViewActivated();
+  }
+
+  deactivateCompactView() {
+    this.settingsActions.compactViewDeactivated();
   }
 }
