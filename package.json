@@ -1,11 +1,11 @@
 {
   "name": "ng-bs-redux-boilerplate",
-  "version": "0.13.4",
+  "version": "0.13.14",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "npm version patch && node ./replace.build.ts && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -46,6 +46,7 @@
     "@angular/cli": "1.6.5",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "@angular/service-worker": "^5.2.4",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
@@ -59,6 +60,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "replace-in-file": "^3.1.1",
     "stylelint": "~8.4.0",
     "stylelint-config-recommended-scss": "~3.0.0",
     "stylelint-config-standard": "~18.0.0",
