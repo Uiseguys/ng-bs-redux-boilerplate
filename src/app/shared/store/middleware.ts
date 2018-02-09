@@ -5,6 +5,7 @@ import { NavigationObservers } from '../navigation/api/observer';
 import { I18nObservers } from '../i18n/observer';
 import { DashboardObservers } from '../../views/dashboard/api/observer';
 import { ToDoObservers } from '../../features/todos/api/observer';
+import { LocalSettingsObservers } from '../../views/local-settings/api/observer';
 
 @Injectable()
 export class Middlewares {
@@ -13,6 +14,7 @@ export class Middlewares {
     private i18nObservers: I18nObservers,
     private dashboardObservers: DashboardObservers,
     private toDoObservers: ToDoObservers,
+    private settingsObservers: LocalSettingsObservers
   ) {}
 
   public init() {
@@ -24,6 +26,9 @@ export class Middlewares {
 
       createEpicMiddleware(this.toDoObservers.onOverviewActivated()),
       createEpicMiddleware(this.toDoObservers.onDetailViewActivated()),
+
+      createEpicMiddleware(this.settingsObservers.onCompactViewActivated()),
+      // createEpicMiddleware(this.settingsObservers.onCompactViewDeactivated()),
     ];
   }
 }

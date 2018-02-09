@@ -3,3 +3,8 @@ I am the SETTINGS component html
 <app-dashboard-settings></app-dashboard-settings>
 <button (click)="changeLanguage('de')">change to 'de'</button>
 <button (click)="changeLanguage('en')">change to 'en'</button>
+
+<h2>User Settings</h2>
+<input #compactViewCB type="checkbox" name="compact_view"
+    [checked]=""
+    (change)="changeView(compactViewCB.checked)"> <label for="compact_view">Compact View</label>

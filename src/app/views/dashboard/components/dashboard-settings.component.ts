@@ -14,7 +14,8 @@ export class DashboardSettingsComponent {
 
   constructor(private dispatcher: DashboardActions) {}
 
-  settingsModified(settings) {
+  settingsModified(settings, $event) {
+    $event.preventDefault();
     this.dispatcher.settingsModified();
   }
 

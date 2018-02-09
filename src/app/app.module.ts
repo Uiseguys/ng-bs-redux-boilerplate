@@ -17,11 +17,13 @@ import { ViewsModule } from './views/views.module';
 import { NavigationModule } from './shared/navigation/navigation.module';
 import { I18nObservers } from './shared/i18n/observer';
 import { I18nActions } from './shared/i18n/actions';
+import { LocalSettingsActions } from './views/local-settings/api/actions';
 import { DashboardObservers } from './views/dashboard/api/observer';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/authorization/token.interceptor';
 import { AuthService } from './shared/authorization/authentication.service';
 import { ToDoObservers } from './features/todos/api/observer';
+import { LocalSettingsObservers } from './views/local-settings/api/observer';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AsideNavComponent } from './views/dashboard/components/aside-nav/aside-nav.component';
@@ -117,6 +119,8 @@ export const I18N_PROVIDERS = [
     DashboardObservers,
     ToDoObservers,
     I18nActions,
+    LocalSettingsActions,
+    LocalSettingsObservers,
     AuthService,
     {
       provide: HTTP_INTERCEPTORS,

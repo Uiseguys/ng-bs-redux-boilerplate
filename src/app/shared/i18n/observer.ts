@@ -45,5 +45,3 @@ export class I18nObservers {
       .mapTo({ type: 'app/i18n/LANGUAGE_CHANGED_DUMMY' });
   }
 }
-
-
