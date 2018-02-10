@@ -48,6 +48,7 @@ $menu-width-smartphone: 230px;
       background-size: auto 20px;
       transition: all 0.15s linear;
       cursor: pointer;
+      position: relative;
       span{
         vertical-align: middle;
       }
@@ -57,8 +58,20 @@ $menu-width-smartphone: 230px;
           vertical-align: middle;
         }
       }
+      .user_initial{
+        margin: 0;
+        font-size: 0.8em;
+        border-radius: 50%;
+        background-color: gray;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 30px;
+      }
 
-      &:hover:not(.active) {
+      &:hover:not(.active):not(.sticky-footer) {
         background-color: rgba(0, 0, 0, 0.1);
         color: #fff;
       }
@@ -66,9 +79,26 @@ $menu-width-smartphone: 230px;
       &:focus {
         outline: none;
       }
+      &.sticky-footer{
+        position: absolute;
+        &:hover:not(.active){
+          background-color: #868e96;
+          color: #fff;
+        }
+      }
     }
   }
 }
+$i: 0;
+$limit: 2;
+@for $i from $limit through -1 {
+  .sticky-footer:nth-last-child(#{$i}){
+    bottom: calc(49.19px * #{$i - 1});
+    width: 100%;
+  }
+}
+
+
 
 main {
   padding: 0;

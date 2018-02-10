@@ -227,7 +227,12 @@
 }
 .menu-divider-bottom{
   box-shadow: -3px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  z-index: 9;
 }
 .menu-divider-top{
   box-shadow: -3px -5px 3px 0px rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.padding-15{
+  padding: 15px !important;
 }

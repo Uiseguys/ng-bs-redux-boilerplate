@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { dispatch, select, select$, WithSubStore } from '@angular-redux/store';
+import { DashboardActions } from './api/actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,10 +7,11 @@ import { dispatch, select, select$, WithSubStore } from '@angular-redux/store';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashbaordComponent implements OnInit {
-  @dispatch() dashboardInitialized = () => ({ type: 'DASHBOARD_INITIALIZED' });
+
+  constructor(private dashboardActions: DashboardActions) {}
 
   ngOnInit() {
     console.log('on init component');
-    // this.dashboardInitialized();
+    this.dashboardActions.dashboardInitialized();
   }
 }
