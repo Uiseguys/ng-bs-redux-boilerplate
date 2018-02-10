@@ -236,3 +236,61 @@
 .padding-15{
   padding: 15px !important;
 }
+
+
+.section1-primary-color {
+  background-color: #DC2D44;
+}
+.section1-primary-color-pale {
+  background-color: rgba(220,45,68, 0.1);
+}
+.section1-primary-color-pale-carrot {
+  color: rgba(220,45,68, 0.3);
+}
+.section1-secondary-color {
+  background-color: #FAF0F2;
+}
+.tags-radius {
+  border-radius: 1.5rem;
+}
+.tags-primary-color {
+  background-color: rgba(0, 0, 0, 0.11);
+}
+.tags-font {
+  font-size: 12px;
+}
+.form-label-font {
+  font-size: 12px;
+  font-weight: bold;
+}
+.form-input-font {
+  font-size: 14px;
+}
+.form-close-btn {
+  width: 18px;
+  height: 18px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  vertical-align: middle;
+  outline: 0;
+  i {
+    display: block;
+    color: rgba(0, 0, 0, 0.11);
+  }
+}
+.stylish-input-group .input-group-addon{
+  padding: 6px 12px;
+  background: white !important;
+}
+.stylish-input-group .form-control{
+  border-left: 0;
+  box-shadow: 0 0 0;
+  border-color:#ccc;
+}
+.stylish-input-group button{
+  border: 0;
+  background: transparent;
+}
