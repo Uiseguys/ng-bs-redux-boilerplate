@@ -11,7 +11,10 @@ import { dispatch, select } from '@angular-redux/store';
 export class AsideNavComponent implements OnInit {
 
   @select() location;
+  @select(['dashboard', 'userData']) USERDATA;
   currentPath: string;
+  userData: string;
+  userInitial: string;
   activeState: String = 'DASHBOARD'; // Set default menu active on load
   constructor() {
   }
@@ -22,6 +25,13 @@ export class AsideNavComponent implements OnInit {
       console.log(location);
       this.currentPath = location.type;
       this.activeState = this.currentPath && this.currentPath.replace('app/navigation/', '');
+    });
+    this.USERDATA.subscribe((USERDATA) => {
+       this.userData = USERDATA;
+       if (this.userData && this.userData.firstName) {
+          this.userInitial = this.userData.firstName && this.userData.firstName.charAt(0).toUpperCase();
+          this.userInitial += this.userData.lastName && this.userData.lastName.charAt(0).toUpperCase();
+       }
     });
   }
 
