@@ -13,11 +13,18 @@ export class DashboardObservers {
       private dashboardActions: DashboardActions,
   ) {}
 
-  public createEpic(): Epic<Action, any> {
-
+  public createEpic(): Epic<any, any> {
     return (action$, store) => action$
       .ofType(DashboardActions.DASHBOARD_INITIALIZED)
         .mapTo({ type:  DashboardActions.DASHBOARD_LOADED });
+  }
+
+  public onSettingChange(): Epic<any, any> {
+    return(action$, store) => action$
+    .ofType(DashboardActions.SETTINGS_MODIFIED)
+    .mapTo({
+      type: DashboardActions.USER_DATA_MODIFIED
+    });
   }
 
 }

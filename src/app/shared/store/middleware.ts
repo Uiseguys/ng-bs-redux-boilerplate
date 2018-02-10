@@ -21,6 +21,7 @@ export class Middlewares {
       createEpicMiddleware(this.i18nObservers.createEpic()),
       createEpicMiddleware(this.navigationObservers.createEpic()),
       createEpicMiddleware(this.dashboardObservers.createEpic()),
+      createEpicMiddleware(this.dashboardObservers.onSettingChange()),
 
       createEpicMiddleware(this.toDoObservers.onOverviewActivated()),
       createEpicMiddleware(this.toDoObservers.onDetailViewActivated()),

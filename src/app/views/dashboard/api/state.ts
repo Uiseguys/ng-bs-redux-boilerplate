@@ -1,8 +1,10 @@
 import { Action } from 'redux';
 import { DashboardActions } from './actions';
+import { DashbaordComponent } from '../dashboard.component';
 
 export interface DashboardState {
   initialized: boolean;
+  userData: any;
 }
 
 const INITIAL_DASHBOARD_STATE: any = {
@@ -11,7 +13,7 @@ const INITIAL_DASHBOARD_STATE: any = {
 
 export function dashboardStateReducers() {
   return function reducer(state: DashboardState = INITIAL_DASHBOARD_STATE,
-                          action: Action): DashboardState {
+                          action: any): DashboardState {
 
     switch (action.type) {
       case DashboardActions.SETTINGS_MODIFIED:
@@ -41,6 +43,16 @@ export function dashboardStateReducers() {
           ...state,
           initialized: false
         };
+    }
+
+    switch (action.type) {
+      case DashboardActions.USER_DATA_MODIFIED: {
+        return{
+          ...state,
+          initialized: true,
+          userData: action.payload
+        };
+      }
     }
 
     return state;

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { StoreModule } from '../../shared/store/store.module';
 import { DashbaordComponent } from './dashboard.component';
@@ -15,7 +16,8 @@ export const id = 'dashboard';
     CommonModule,
     StoreModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   declarations: [
     DashbaordComponent,

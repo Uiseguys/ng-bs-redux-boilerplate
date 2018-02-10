@@ -96,7 +96,7 @@ export const I18N_PROVIDERS = [
   declarations: [
     // app
     AppComponent,
-    AsideNavComponent,
+    AsideNavComponent
   ],
   imports: [ // import Angular's modules
     // core
