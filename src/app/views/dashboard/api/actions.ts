@@ -24,12 +24,12 @@ export class DashboardActions {
   public dashboardDestroyed = (): Action => ({
     type: DashboardActions.DASHBOARD_DESTROYED
   })
-
+/*
   @dispatch()
   public settingsModified = (payload: any): any => ({
     type: DashboardActions.SETTINGS_MODIFIED,
     payload : payload
-  })
+  })*/
 
   @dispatch()
   public settingsModified = (payload: any): any => ({

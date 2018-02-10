@@ -13,7 +13,7 @@ export class AsideNavComponent implements OnInit {
   @select() location;
   @select(['dashboard', 'userData']) USERDATA;
   currentPath: string;
-  userData: string;
+  userData: any = { firstName : '' , lastName : ''};
   userInitial: string;
   activeState: String = 'DASHBOARD'; // Set default menu active on load
   constructor() {
