@@ -32,6 +32,7 @@ $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #e83e8c;
 $red:     #dc3545;
+$dark-red: #bc2d3b;
 $orange:  #fd7e14;
 $yellow:  #ffc107;
 $green:   #28a745;
@@ -45,8 +46,10 @@ $theme-colors: (
   info: $cyan,
   warning: $yellow,
   danger: $red,
+  dark-danger: $dark-red,
   light: $gray-100,
-  dark: $gray-800
+  dark: $gray-800,
+  white: $white
 );
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
