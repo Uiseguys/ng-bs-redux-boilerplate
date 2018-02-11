@@ -1,6 +1,5 @@
 import { Action } from 'redux';
 import { LocalSettingsActions } from './actions';
-import { LocalStorageService } from '../../../shared/localStorage/localStorage.service'
 
 export interface LocalSettingsState {
   compactView: boolean;

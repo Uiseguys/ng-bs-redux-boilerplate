@@ -6,19 +6,19 @@ import { RootReducer } from './reducers';
 import { Middlewares } from './middleware';
 import { Enhancers } from './enhancers';
 
-import { LocalStorageService } from '../localStorage/localStorage.service'
+import { saveState } from '../localStorage/localStorage'
 
 @NgModule({
   imports: [ NgReduxModule ],
   providers: [ Middlewares, Enhancers ],
 })
 export class StoreModule {
-  constructor( public store: NgRedux<object>, middleware: Middlewares, enhancers: Enhancers, private localStorage: LocalStorageService) {
+  constructor( public store: NgRedux<object>, middleware: Middlewares, enhancers: Enhancers) {
     store.configureStore( RootReducer, {}, middleware.init(), enhancers.init());
 
     store.subscribe(() => {
       let currentState: any = store.getState();
-      this.localStorage.saveState(
+      saveState(
         'settings',
         currentState.settings
       );

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createEpicMiddleware } from 'redux-observable';
 import { navigationMiddleware } from '../navigation/api/state';
+import { diagnosticsMiddleware } from '../diagnostics/state';
 import { NavigationObservers } from '../navigation/api/observer';
 import { I18nObservers } from '../i18n/observer';
 import { DashboardObservers } from '../../views/dashboard/api/observer';
@@ -27,6 +28,7 @@ export class Middlewares {
 
       createEpicMiddleware(this.toDoObservers.onOverviewActivated()),
       createEpicMiddleware(this.toDoObservers.onDetailViewActivated()),
+      diagnosticsMiddleware // needs to be last
     ];
   }
 }
