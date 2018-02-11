@@ -13,7 +13,11 @@
 // Theme customization
 @import "theme/theme";
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
 
+body, html {
+  font-family: 'Roboto-Light';
+}
 /* You can add global styles to this file, and also import other style files */
 
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .video-js .vjs-modal-dialog, .vjs-button > .vjs-icon-placeholder:before, .vjs-modal-dialog .vjs-modal-dialog-content {
@@ -1409,21 +1413,21 @@ video::-webkit-media-text-track-display {
 }
 
 @keyframes vjs-spinner-spin {
-  
+
   100% {
     transform: rotate(360deg)
   }
 }
 
 @-webkit-keyframes vjs-spinner-spin {
-  
+
   100% {
     -webkit-transform: rotate(360deg)
   }
 }
 
 @keyframes vjs-spinner-fade {
-  
+
   0% {
     border-top-color: #73859f
   }
@@ -1442,7 +1446,7 @@ video::-webkit-media-text-track-display {
 }
 
 @-webkit-keyframes vjs-spinner-fade {
-  
+
   0% {
     border-top-color: #73859f
   }
@@ -1569,14 +1573,13 @@ video::-webkit-media-text-track-display {
 }
 
 @media print {
-  
+
   .video-js > :not(.vjs-tech):not(.vjs-poster) {
     visibility: hidden
   }
-  
+
 }
 
 nfcl-video-player.hydrated {
   visibility: inherit!important;
 }
-
