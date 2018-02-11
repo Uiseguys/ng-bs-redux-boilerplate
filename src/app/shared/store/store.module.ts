@@ -15,10 +15,12 @@ import { LocalStorageService } from '../localStorage/localStorage.service'
 export class StoreModule {
   constructor( public store: NgRedux<object>, middleware: Middlewares, enhancers: Enhancers, private localStorage: LocalStorageService) {
     store.configureStore( RootReducer, {}, middleware.init(), enhancers.init());
+
     store.subscribe(() => {
+      let currentState: any = store.getState();
       this.localStorage.saveState(
         'settings',
-        store.getState().settings
+        currentState.settings
       );
     });
   }
