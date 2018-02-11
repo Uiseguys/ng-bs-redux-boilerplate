@@ -38,7 +38,7 @@ function defaultTitleFormatter(options) {
 }
 
 function saveToLocalStorage(state) {
-    const key: string = 'redux-loggger';
+    const key: string = 'redux-logger';
     let currentStorageContainer: any = [];
     let currentStorageValue: any = loadState(key);
 

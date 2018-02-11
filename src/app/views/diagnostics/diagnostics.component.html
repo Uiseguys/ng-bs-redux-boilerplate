@@ -1,0 +1,15 @@
+<section>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Log History</h1>
+            <h5>Most Recent Actions:</h5>
+            <ul>
+                <ng-template ngFor let-log [ngForOf]="logs.reverse()">
+                    <li *ngFor="let key of log | keys">
+                        <span>{{key}}</span>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</section>

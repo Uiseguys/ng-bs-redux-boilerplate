@@ -18,6 +18,9 @@
         <li tabindex="0" class="menu-orange" [ngClass]="{'active': activeState === 'DASHBOARD'}">
             <app-link [target]="'DASHBOARD'"><i class="icon-dashboard x2"></i><span>Dashboard</span></app-link>
         </li>
+        <li tabindex="0" class="menu-red" [ngClass]="{'active': activeState === 'DIAGNOSTICS'}">
+            <app-link [target]="'DIAGNOSTICS'"><i class="icon-widgets x2"></i><span>Diagnostics</span></app-link>
+        </li>
         <li tabindex="0" class="menu-yellow"  [ngClass]="{'active': activeState === 'SETTINGS'}">
             <app-link [target]="'SETTINGS'"><i class="icon-wifi_tethering x2"></i><span>Settings</span></app-link>
         </li>
