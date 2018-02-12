@@ -3,21 +3,5 @@ $menu-width-tablet: 60px;
 $menu-width-smartphone: 230px;
 
 main{
-  padding: 0px;
-  position:relative;
-  height:100vh;
-  width: calc(100% - #{$menu-width-desktop});
-  margin-left: $menu-width-desktop;
-}
-@media screen and (max-width:900px) and (min-width:400px){
-  main{
-    width: calc(100% - #{$menu-width-tablet});
-    margin-left: $menu-width-tablet;
-  }
-}
-@media screen and (max-width:400px){
-  main{
-    width: calc(100%);
-    margin-left: 0;
-  }
+  padding-left: 60px;
 }

@@ -1,4 +1,4 @@
-<section>
+<section class="container-fluid">
     <div class="row section1-primary-color pt-2 pb-4 pl-2">
         <div class="col-lg-6 mb-2">
             <div class="form-inline">
@@ -146,16 +146,20 @@
             <i class="fa fa-caret-up section1-primary-color-pale-carrot" style="display: block;"></i>
         </button>
     </div>
-</section>
 
-<div [ngSwitch]="currentPath">
-    <div *ngSwitchCase="'app/navigation/TODOS'">
+
+    <div [ngSwitch]="currentPath">
+      <div *ngSwitchCase="'app/navigation/TODOS'">
         <h3>TODOS</h3>
         <app-todo-collection (collectionItemClicked)="showDetailView($event)"></app-todo-collection>
-    </div>
+      </div>
 
-    <div *ngSwitchCase="'app/navigation/TODO_DETAIL'">
+      <div *ngSwitchCase="'app/navigation/TODO_DETAIL'">
         <h3>ToDo Detail</h3>
         <app-todo-detail [itemId]="currentToDoId"></app-todo-detail>
+      </div>
     </div>
-</div>
+
+</section>
+
+

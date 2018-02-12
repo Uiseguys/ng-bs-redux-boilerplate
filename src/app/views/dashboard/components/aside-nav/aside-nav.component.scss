@@ -14,6 +14,8 @@ $menu-width-smartphone: 230px;
   left: 0;
   z-index: 5;
   outline: none;
+  overflow: hidden;
+  box-shadow: 0 6px 6px 1px rgba(0, 0, 0, 0.2);
 
   .avatar {
     background: rgba(0,0,0,0.1);
@@ -46,9 +48,12 @@ $menu-width-smartphone: 230px;
       background-repeat: no-repeat;
       background-position: left 15px center;
       background-size: auto 20px;
-      transition: all 0.15s linear;
-      cursor: pointer;
+      cursor: pointer!important;
       position: relative;
+
+      * {
+        cursor: pointer!important;
+      }
       span{
         vertical-align: middle;
       }
@@ -98,17 +103,8 @@ $limit: 2;
   }
 }
 
-
-
-main {
-  padding: 0;
-  position: relative;
-  height: 100vh;
-  width: calc(100% - 240px);
-  margin-left: 240px;
-}
-
-@media screen and (max-width:900px) and (min-width:400px){
+// @media screen and (max-width:900px) and (min-width:400px){
+@media screen and (max-width:9000px) {
   .menu {
     width: $menu-width-tablet;
 
@@ -142,7 +138,6 @@ main {
 
     ul {
       li {
-        height: $menu-width-tablet/1.5;
         background-position: center center;
         background-size: 30px auto;
         position: relative;
@@ -150,7 +145,7 @@ main {
         height: 50px;
         text-align: center;
         span {
-          //display: none;
+          display: none;
           opacity: 0;
           position: absolute;
           background: rgba(0,0,0,0.5);
@@ -195,7 +190,7 @@ main {
     }
   }
 }
-
+/*
 @media screen and (max-width: 400px) {
   .menu {
     width: $menu-width-smartphone;
@@ -244,6 +239,19 @@ main {
       .smartphone-menu-trigger {
         pointer-events: none;
       }
+    }
+  }
+}
+*/
+
+/deep/ {
+  .menu li {
+    cursor: pointer!important;
+    * {
+      cursor: pointer!important;
+    }
+    i:before {
+      cursor: hand!important;
     }
   }
 }
