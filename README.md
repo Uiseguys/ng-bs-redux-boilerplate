@@ -4,3 +4,5 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## Live Demo
+[https://ng-bs-redux-boilerplate.herokuapp.com/](https://ng-bs-redux-boilerplate.herokuapp.com/)
