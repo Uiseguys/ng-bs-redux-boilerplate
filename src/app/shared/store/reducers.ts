@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { dashboardStateReducers } from '../../views/dashboard/api/state';
-import { navigationReducer } from '../navigation/api/state';
+import { navigationReducer  } from '../navigation/api/state';
+import { environmentStateReducers} from '../environment/api/state';
 import { i18nStateReducers } from '../i18n/state';
 import { localSettingsReducers } from '../../views/local-settings/api/state';
 
@@ -20,5 +21,6 @@ export const RootReducer = combineReducers({
   location: navigationReducer,
   i18n: i18nStateReducers(),
   settings: localSettingsReducers(),
+  environment: environmentStateReducers(),
   ... featureReducerMap
 });

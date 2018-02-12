@@ -1,0 +1,25 @@
+:host {
+  display: block;
+
+  * {
+    cursor: pointer!important;
+  }
+  .sticky-top{
+    color: #fff;
+    text-align: center;
+    border-color: #37a000;
+    background-color: #37a000;
+    padding: 6px 20px 6px 10px;
+    font-weight: 100;
+    margin-left: 0;
+    margin-right: 0;
+    .fa{
+      cursor: pointer!important;
+      float: right;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+

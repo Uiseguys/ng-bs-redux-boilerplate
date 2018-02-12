@@ -15,6 +15,7 @@ import * as i18nextLanguageDetector from 'i18next-browser-languagedetector';
 import { AppComponent } from './app.component';
 import { ViewsModule } from './views/views.module';
 import { NavigationModule } from './shared/navigation/navigation.module';
+import { StatusModule } from './shared/environment/environment.module';
 import { I18nObservers } from './shared/i18n/observer';
 import { I18nActions } from './shared/i18n/actions';
 import { DashboardObservers } from './views/dashboard/api/observer';
@@ -109,6 +110,7 @@ export const I18N_PROVIDERS = [
     NgbModule.forRoot(),
     // app
     ViewsModule,
+    StatusModule,
     NavigationModule
   ],
   exports: [
