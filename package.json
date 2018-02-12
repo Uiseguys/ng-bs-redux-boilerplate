@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-		"build:prod":  "ng build --aot --target=production",
-		"postinstall": "npm run build:prod" ,
+    "build:prod": "ng build --aot --target=production",
+    "postinstall": "npm run build:prod",
     "serve:heroku": "http-server dist"
   },
   "private": false,
