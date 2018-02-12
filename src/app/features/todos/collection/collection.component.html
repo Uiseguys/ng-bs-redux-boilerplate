@@ -1,0 +1,10 @@
+<ul *ngIf="collection$ | async as todos">
+  <li *ngFor="let todo of todos; index as i; first as isFirst">
+
+    <div class="todo" (click)="collectionItemClicked.emit(todo.id)">
+      {{ todo.task }}
+    </div>
+
+  </li>
+
+</ul>

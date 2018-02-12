@@ -1,0 +1,10 @@
+<app-aside-nav></app-aside-nav>
+<main [ngSwitch]="(location | async).type" class="padding-15">
+  <app-dashboard *ngSwitchCase="'app/navigation/DASHBOARD'"></app-dashboard>
+  <app-local-settings *ngSwitchCase="'app/navigation/SETTINGS'"></app-local-settings>
+  <app-about *ngSwitchCase="'app/navigation/ABOUT'"></app-about>
+
+  <app-todos-view *ngSwitchCase="'app/navigation/TODOS'"></app-todos-view>
+  <app-todos-view *ngSwitchCase="'app/navigation/TODO_DETAIL'"></app-todos-view>
+
+</main>
