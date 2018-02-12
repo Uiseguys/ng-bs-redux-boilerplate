@@ -4,11 +4,9 @@
             <h1>Log History</h1>
             <h5>Most Recent Actions:</h5>
             <ul>
-                <ng-template ngFor let-log [ngForOf]="logs.reverse()">
-                    <li *ngFor="let key of log | keys">
-                        <span>{{key}}</span>
-                    </li>
-                </ng-template>
+                <li *ngFor="let action of logs.reverse()">
+                    <span>{{action}}</span>
+                </li>
             </ul>
         </div>
     </div>

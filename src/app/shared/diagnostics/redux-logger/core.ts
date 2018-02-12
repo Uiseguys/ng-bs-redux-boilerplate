@@ -37,8 +37,9 @@ function defaultTitleFormatter(options) {
     };
 }
 
-function saveToLocalStorage(state) {
+function saveToLocalStorage(title: string) {
     const key: string = 'redux-logger';
+    const action: string = title.replace(/(%c)/g, "");
     let currentStorageContainer: any = [];
     let currentStorageValue: any = loadState(key);
 
@@ -48,7 +49,7 @@ function saveToLocalStorage(state) {
         });
     }
 
-    currentStorageContainer.push(state);
+    currentStorageContainer.push(action);
     saveState(key, currentStorageContainer);
 }
 
@@ -148,7 +149,7 @@ function printBuffer(buffer, options) {
             } else logger[nextStateLevel]('next state', nextState);
         }
 
-        saveToLocalStorage(obj);
+        saveToLocalStorage(title);
 
         if (diff) {
             diffLogger(prevState, nextState, logger, isCollapsed);
