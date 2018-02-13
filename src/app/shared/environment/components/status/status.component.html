@@ -4,3 +4,7 @@
     </span>
     <i class="fa fa-remove" (click)="hideWarning()"></i>
 </div>
+
+<div *ngIf="isOverlay" id="overlay">
+  <div id="text">{{ overlayMsg }}</div>
+</div>
