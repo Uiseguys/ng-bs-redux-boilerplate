@@ -1,6 +1,6 @@
-<div class="sticky-top text-center" *ngIf="!isDismiss;">
-    <span>
-	    Internet connection not available.
-    </span>
-    <i class="fa fa-remove" (click)="hideWarning()"></i>
+<div [hidden]="isDismiss">
+    <scb-alert type="success" class="sticky-top text-center"  dismissible>
+        Internet connection not available.
+    </scb-alert>
+    <!--<i class="fa fa-remove" (click)="hideWarning()"></i>-->
 </div>
