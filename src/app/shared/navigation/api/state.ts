@@ -5,6 +5,7 @@ const history = createHistory();
 
 const routesMap = {
   'app/navigation/DASHBOARD': '/dashboard',
+  'app/navigation/DIAGNOSTICS': '/diagnostics',
   'app/navigation/ABOUT': '/about',
   'app/navigation/SETTINGS': '/settings',
   'app/navigation/TODOS': '/todos',

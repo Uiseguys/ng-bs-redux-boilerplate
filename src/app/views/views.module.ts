@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { DiagnosticsModule } from './diagnostics/diagnostics.module';
 import { AboutComponent } from './about/about.component';
 import { LocalSettingsComponent } from './local-settings/local-settings.component';
 import { NavigationModule } from '../shared/navigation/navigation.module';
@@ -17,6 +18,7 @@ import { LocalSettingsActions } from './local-settings/api/actions';
 
     // app modules
     DashboardModule,
+    DiagnosticsModule,
     NavigationModule,
 
     // common / shared modules
@@ -31,6 +33,7 @@ import { LocalSettingsActions } from './local-settings/api/actions';
   ],
   exports: [
     DashboardModule,
+    DiagnosticsModule,
     AboutComponent,
     LocalSettingsComponent,
     I18NextFormatPipe,
