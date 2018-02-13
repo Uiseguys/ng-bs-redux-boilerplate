@@ -12,6 +12,8 @@ export class ToDosViewComponent implements OnInit {
   currentPath: string;
   currentToDoId: string;
 
+  filterActive: boolean = false;
+
   @select('location') location$; // select location data from store
   @dispatch() showDetailView = (playlistId) => ({type: 'app/navigation/TODO_DETAIL', payload: {id: playlistId}});
 
