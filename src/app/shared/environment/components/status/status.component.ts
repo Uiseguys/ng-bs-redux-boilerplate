@@ -16,6 +16,7 @@ export class StatusComponent {
   isConnected: Observable<boolean>;
   isDismiss: boolean;
   isOverlay: boolean;
+  overlayMsg: string;
 
   constructor(private ngZone: NgZone, private dispatcher: EnvironmentActions) {
     this.isConnected = Observable.merge(
