@@ -23,12 +23,8 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.9",
-<<<<<<< HEAD
     "angular-i18next": "^3.2.0",
-=======
     "@stencil/core": "^0.4.3",
-    "angular-i18next": "^2.0.0",
->>>>>>> db625636226ac5b90f8eaf35e93b1bdd1de2c92c
     "angular2-jwt": "^0.2.3",
     "bootstrap": "4.0.0",
     "core-js": "^2.4.1",
