@@ -49,3 +49,17 @@
     }
   }
 }
+
+/deep/ {
+  scb-alert {
+    .alert {
+      z-index: 0;
+      position: relative;
+      display: none;
+    }
+    .alert.show {
+      z-index: 20;
+      display: block;
+    }
+  }
+}
