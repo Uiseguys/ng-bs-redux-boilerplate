@@ -9,7 +9,10 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        { "glob": "**/*",
+          "input": "../node_modules/stencil-bootrap-test/dist",
+          "output": "./assets/stencil-bootrap-test" }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -22,7 +25,8 @@
       "styles": [
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
