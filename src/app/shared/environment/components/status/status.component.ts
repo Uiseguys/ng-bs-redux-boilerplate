@@ -21,10 +21,14 @@ export class StatusComponent {
         Observable.fromEvent(window, 'offline').map(() => false));
       this.isConnected.subscribe((flag) => {
           this.dispatcher.isConnected(flag);
-          this.isDismiss = flag;
+          this.isDismiss = !flag;
       });
   }
+    onToggleVisibility(event: CustomEvent) {
+        console.log(event);
+        this.isDismiss = !event;
+    }
   hideWarning() {
-      this.isDismiss = true;
+      this.isDismiss = false;
   }
 }

@@ -1,5 +1,5 @@
-<div [hidden]="isDismiss">
-    <scb-alert type="success" class="sticky-top text-center"  dismissible>
+<div [hidden]="!isDismiss">
+    <scb-alert type="success" class="sticky-top text-center" typed="success" [show]="isDismiss"  dismissible onDismiss (toggleVisibility)="onToggleVisibility($event)">
         Internet connection not available.
     </scb-alert>
     <!--<i class="fa fa-remove" (click)="hideWarning()"></i>-->
