@@ -1,9 +1,6 @@
-<div [hidden]="!isDismiss">
-    <scb-alert type="success" class="sticky-top text-center" typed="success" [show]="isDismiss"  dismissible onDismiss (toggleVisibility)="onToggleVisibility($event)">
-        Internet connection not available.
-    </scb-alert>
-    <!--<i class="fa fa-remove" (click)="hideWarning()"></i>-->
-</div>
+<scb-alert type="success" class="sticky-top text-center" [show]="isDismiss" typed="success" (toggleVisibility)="onToggleVisibility($event)"  dismissible >
+    Internet connection not available.
+</scb-alert>
 
 <div *ngIf="isOverlay" id="overlay">
   <div id="text">{{ overlayMsg }}</div>

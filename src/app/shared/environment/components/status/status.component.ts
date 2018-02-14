@@ -20,29 +20,26 @@ export class StatusComponent {
 
   constructor(private ngZone: NgZone, private dispatcher: EnvironmentActions) {
     this.isConnected = Observable.merge(
-        Observable.of(navigator.onLine),
-        Observable.fromEvent(window, 'online').map( () => true),
-        Observable.fromEvent(window, 'offline').map(() => false));
-      this.isConnected.subscribe((flag) => {
-          this.dispatcher.isConnected(flag);
-          this.isDismiss = !flag;
-      });
+      Observable.of(navigator.onLine),
+      Observable.fromEvent(window, 'online').map(() => true),
+      Observable.fromEvent(window, 'offline').map(() => false));
+    this.isConnected.subscribe((flag) => {
+      this.dispatcher.isConnected(flag);
+      this.isDismiss = !flag;
+    });
 
-    window.onresize = (e) =>
-    {
-        this.ngZone.run(() => {
-            this.currentResolution(window.innerWidth, window.innerHeight);
-        });
+    window.onresize = (e) => {
+      this.ngZone.run(() => {
+        this.currentResolution(window.innerWidth, window.innerHeight);
+      });
     };
     this.checkDevice();
     this.currentResolution(window.innerWidth, window.innerHeight);
   }
-    onToggleVisibility(event: CustomEvent) {
-        console.log(event);
-        this.isDismiss = !event;
-    }
-  hideWarning() {
-      this.isDismiss = false;
+
+  onToggleVisibility(event: CustomEvent) {
+    console.log(event);
+    this.isDismiss = !event;
   }
 
   checkDevice() {
