@@ -29,18 +29,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AsideNavComponent } from './views/dashboard/components/aside-nav/aside-nav.component';
 
 const i18nextOptions = {
-  // whitelist: ['en', 'ru'],
-  // fallbackLng: 'en',
+  whitelist: ['de'],
+  fallbackLng: 'de',
   debug: true, // set debug?
   returnEmptyString: false,
   ns: [
-    'common',
+    'default',
   ],
-
+  defaultNS: 'default',
   backend: {
-    loadPath: function(langs, ns) {
-      return 'assets/locales/{{lng}}.{{ns}}.json';
+    loadPath: function (langs, ns) {
+      // return 'assets/locales/{{lng}}.{{ns}}.json';
+      return 'http://18.196.175.166:3000/api/Published/361c9e81-8d78-4fff-b53e-21cdc47846c8/{{lng}}/{{ns}}';
     }
+  },
+  interpolation: {
+    format: I18NextModule.interpolationFormat()
   },
   // lang detection plugin options
   detection: {
@@ -69,7 +73,7 @@ export function appInit(i18next: ITranslationService) {
   };
 }
 
-export function localeIdFactory(i18next: ITranslationService)  {
+export function localeIdFactory(i18next: ITranslationService) {
   return i18next.language;
 }
 
@@ -94,7 +98,7 @@ export const I18N_PROVIDERS = [
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   declarations: [
     // app
     AppComponent,

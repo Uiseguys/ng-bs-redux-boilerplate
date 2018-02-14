@@ -333,9 +333,9 @@ amqplib@^0.5.2:
     readable-stream "1.x >=1.1.9"
     safe-buffer "^5.0.1"
 
-angular-i18next@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/angular-i18next/-/angular-i18next-2.0.0.tgz#4bb515ecbd597a3a4d1b45afd25643901f06190f"
+angular-i18next@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/angular-i18next/-/angular-i18next-3.2.0.tgz#57cba9ad3a8663fd4605138cf17d46cd79034f4f"
 
 angular2-jwt@^0.2.3:
   version "0.2.3"

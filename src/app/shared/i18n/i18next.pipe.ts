@@ -10,10 +10,10 @@ export class I18NextFormatPipe implements PipeTransform {
 
   constructor(
     @Inject(I18NEXT_SERVICE) private translateI18Next: ITranslationService
-  ) {}
+  ) { }
 
   public transform(value: string, options: Object | string): string {
-    const opts: any = typeof(options) === 'string' ? { format: options } : options;
+    const opts: any = typeof (options) === 'string' ? { format: options } : options;
 
     if (opts && opts.format) {
       return this.translateI18Next.t(value, opts.format);

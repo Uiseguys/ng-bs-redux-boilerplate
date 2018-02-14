@@ -4,15 +4,13 @@
 //-->
 
 <section class="container-fluid">
-  <h2>User Settings</h2>
+  <h2>{{'User Settings' | i18nextFormat }}</h2>
   <app-dashboard-settings></app-dashboard-settings>
 
   <div *ngIf="settings | async as settings">
     <br />
     <br />
-    <label >Compact View</label>
-    <input #compactViewCB type="checkbox" name="compact_view"
-        [checked]="settings.compactView"
-        (change)="(compactViewCB.checked) ? activateCompactView() : deactivateCompactView()">
+    <label>{{'Compact View' | i18nextFormat }}</label>
+    <input #compactViewCB type="checkbox" name="compact_view" [checked]="settings.compactView" (change)="(compactViewCB.checked) ? activateCompactView() : deactivateCompactView()">
   </div>
 </section>
