@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DiagnosticsModule } from './diagnostics/diagnostics.module';
 import { AboutComponent } from './about/about.component';
@@ -41,6 +41,9 @@ import { LocalSettingsActions } from './local-settings/api/actions';
   ],
   providers: [
     LocalSettingsActions,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class ViewsModule { }
