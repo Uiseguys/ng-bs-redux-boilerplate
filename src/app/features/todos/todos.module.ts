@@ -9,6 +9,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { PlaylistCollectionComponent } from './collection/collection.component';
 import { PlaylistDetailComponent } from './detail/detail.component';
 
+import { SearchComponent } from './search/search.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,15 +20,18 @@ import { PlaylistDetailComponent } from './detail/detail.component';
     SharedModule,
   ],
   declarations: [
-   PlaylistCollectionComponent,
-   PlaylistDetailComponent
+    PlaylistCollectionComponent,
+    PlaylistDetailComponent,
+
+    SearchComponent
   ],
   providers: [
-   ToDoActions
+    ToDoActions
   ],
   exports: [
     PlaylistDetailComponent,
     PlaylistCollectionComponent,
+    SearchComponent
   ]
 })
-export class ToDosModule {}
+export class ToDosModule { }

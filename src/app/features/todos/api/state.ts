@@ -4,15 +4,23 @@ export interface ToDosState {
   initialized: boolean;
   collection: any;
   currentToDo: any;
+  selectedTags: string[];
+  tags: string[];
 }
 
 const INITIAL_TODOS_STATE: any = {
-  initialized: false
+  initialized: false,
+  selectedTags: [
+    'work',
+    'books',
+    'movies',
+    'private'
+  ]
 };
 
 export function todosStateReducers() {
   return function reducer(state: ToDosState = INITIAL_TODOS_STATE,
-                          action: any): ToDosState {
+    action: any): ToDosState {
 
     switch (action.type) {
       case ToDoActions.OVERVIEW_ACTIVATED:

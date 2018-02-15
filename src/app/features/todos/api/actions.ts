@@ -11,6 +11,7 @@ export class ToDoActions {
   static readonly DETAIL_VIEW_DEACTIVATED = featureId + '/DETAIL_VIEW_DEACTIVATED';
   static readonly DETAIL_DATA_RECEIVED = featureId + '/DETAIL_DATA_RECEIVED';
   static readonly COLLECTION_DATA_RECEIVED = featureId + '/COLLECTION_DATA_RECEIVED';
+  static readonly ADD_TAG = featureId + '/ADD_TAG';
 
   @dispatch()
   public overviewActivated = (): Action => ({
