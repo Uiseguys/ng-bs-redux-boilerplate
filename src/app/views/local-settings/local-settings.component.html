@@ -13,4 +13,13 @@
     <label>{{'Compact View' | i18nextFormat }}</label>
     <input #compactViewCB type="checkbox" name="compact_view" [checked]="settings.compactView" (change)="(compactViewCB.checked) ? activateCompactView() : deactivateCompactView()">
   </div>
+
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Change Language</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button class="dropdown-item" (click)="changeLanguage('en')">English</button>
+      <button class="dropdown-item" (click)="changeLanguage('de')">Dutch</button>
+    </div>
+  </div>
+
 </section>
