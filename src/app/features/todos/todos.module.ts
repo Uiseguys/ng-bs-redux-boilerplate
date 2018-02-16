@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StoreModule } from '../../shared/store/store.module';
@@ -9,6 +9,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { PlaylistCollectionComponent } from './collection/collection.component';
 import { PlaylistDetailComponent } from './detail/detail.component';
 
+import { SearchComponent } from './search/search.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,15 +20,21 @@ import { PlaylistDetailComponent } from './detail/detail.component';
     SharedModule,
   ],
   declarations: [
-   PlaylistCollectionComponent,
-   PlaylistDetailComponent
+    PlaylistCollectionComponent,
+    PlaylistDetailComponent,
+
+    SearchComponent
   ],
   providers: [
-   ToDoActions
+    ToDoActions
   ],
   exports: [
     PlaylistDetailComponent,
     PlaylistCollectionComponent,
+    SearchComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class ToDosModule {}
+export class ToDosModule { }
