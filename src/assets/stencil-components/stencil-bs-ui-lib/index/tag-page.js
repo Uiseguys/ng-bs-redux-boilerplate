@@ -102,7 +102,35 @@ class TagPage {
                                 h("code", null, "boolean")),
                             h("td", null, "no"),
                             h("td", null, "false"),
-                            h("td", null, "Makes tag rounded.")))),
+                            h("td", null, "Makes tag rounded.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "removeOnClose")),
+                            h("td", null,
+                                h("code", null, "boolean")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "true")),
+                            h("td", null,
+                                "If set ",
+                                h("code", null, "true"),
+                                ", element will be removed from DOM on ",
+                                h("code", null, "close()"),
+                                " event.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "onCloseData")),
+                            h("td", null,
+                                h("code", null, "any")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "undefined")),
+                            h("td", null,
+                                "Custom data in ",
+                                h("code", null, "tagCloseEvent"),
+                                " which is emited every time ",
+                                h("code", null, "close()"),
+                                " method triggered.")))),
                 h("h4", { class: "my-3" }, "Methods"),
                 h("table", null,
                     h("thead", null,
@@ -137,6 +165,7 @@ class TagPage {
         ];
     }
     static get is() { return "tag-page"; }
+    static get style() { return "td,\nth {\n  padding: 4px;\n}"; }
 }
 
 export { TagPage };

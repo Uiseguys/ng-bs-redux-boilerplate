@@ -35,6 +35,7 @@
     <div class="section1-secondary-color row pt-2 pb-3  pl-3 pr-3" *ngIf="filterActive">
       <form class="col-sm-12">
         <div class="row">
+
           <div class="form-group col-sm-4">
             <label class="text-black form-label-font" for="sourceSelect">
               <span class="align-middle">TAGS </span>
@@ -43,27 +44,13 @@
               </button>
             </label>
 
-            <h4>tags: </h4>
-            <div *ngIf="tags$ | async as tags">
-
-              <div *ngFor="let tag of tags">
-
-                <cwc-tag rounded="true" closable="true" text="{{tag}}"></cwc-tag>
-
-              </div>
+            <div *ngIf="tags$ | async as tagOptions">
+              <cwc-typeahead [data]="tagOptions" [placeholder]="'Books, movies, etc.'" (typeaheadOnSubmit)="handleTagSelect($event)"></cwc-typeahead>
             </div>
-            <h4>selected: </h4>
 
-            <div *ngIf="selectedTags$ | async as selectedTags">
-
-              <div *ngFor="let selectedTag of selectedTags">
-
-                <cwc-tag rounded="true" closable="true" text="{{selectedTag}}"></cwc-tag>
-
-              </div>
-            </div>
 
           </div>
+
           <div class="form-group col-sm-5">
             <label class="text-black form-label-font">
               <span class="align-middle">DUE DATE </span>
@@ -93,72 +80,15 @@
         </div>
       </form>
 
-      <div class="col-sm-12">
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Private</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Movies</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum ipsum</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum Lorem ipsum ipsum</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum Lorem ipsum</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum ipsum</span>
-          </div>
-        </div>
-        <div class="tag d-inline-block mt-2 mr-2 pr-2 tags-primary-color tags-radius text-white">
-          <div class="d-inline-block align-top pl-1">
-            <button class="btn form-close-btn" type="button">
-              <i class="icon-close"></i>
-            </button>
-            <span class="text-black tags-font pl-2">Lorem ipsum Lorem ipsum ipsum</span>
-          </div>
-        </div>
+
+      <div *ngIf="selectedTags$ | async as selectedTags" class="col-12">
+
+        <cwc-tag *ngFor="let selectedTag of selectedTags" id="tag-select" [rounded]="true" [closable]="true" [text]="selectedTag"
+          [removeOnClose]="false" (tagCloseEvent)="handleTagClose($event)" class="mx-1"></cwc-tag>
+
       </div>
+
+
       <!--
       <div class="row section1-primary-color-pale">
         <button class="btn btn-link w-100 p-0 rounded-0 border-0" type="button" style="height: 12px;"
