@@ -42,11 +42,28 @@
                 <i class="icon-close"></i>
               </button>
             </label>
-            <!-- <select id="sourceSelect" class="form-control form-input-font">
-         
-            </select> -->
-          </div>
 
+            <h4>tags: </h4>
+            <div *ngIf="tags$ | async as tags">
+
+              <div *ngFor="let tag of tags">
+
+                <cwc-tag rounded="true" closable="true" text="{{tag}}"></cwc-tag>
+
+              </div>
+            </div>
+            <h4>selected: </h4>
+
+            <div *ngIf="selectedTags$ | async as selectedTags">
+
+              <div *ngFor="let selectedTag of selectedTags">
+
+                <cwc-tag rounded="true" closable="true" text="{{selectedTag}}"></cwc-tag>
+
+              </div>
+            </div>
+
+          </div>
           <div class="form-group col-sm-5">
             <label class="text-black form-label-font">
               <span class="align-middle">DUE DATE </span>

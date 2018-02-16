@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StoreModule } from '../../shared/store/store.module';
@@ -32,6 +32,9 @@ import { SearchComponent } from './search/search.component';
     PlaylistDetailComponent,
     PlaylistCollectionComponent,
     SearchComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class ToDosModule { }
