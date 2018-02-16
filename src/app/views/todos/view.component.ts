@@ -15,15 +15,15 @@ export class ToDosViewComponent implements OnInit {
   filterActive: boolean = false;
 
   @select('location') location$; // select location data from store
-  @dispatch() showDetailView = (playlistId) => ({type: 'app/navigation/TODO_DETAIL', payload: {id: playlistId}});
+  @dispatch() showDetailView = (playlistId) => ({ type: 'app/navigation/TODO_DETAIL', payload: { id: playlistId } });
 
   ngOnInit() {
-      this.location.subscribe((location) => {
-        console.log('location in subscription:');
-        console.log(location);
-        this.currentPath = location.type;
-        this.currentToDoId = location.payload.id;
-      });
+    this.location.subscribe((location) => {
+      console.log('location in subscription:');
+      console.log(location);
+      this.currentPath = location.type;
+      this.currentToDoId = location.payload.id;
+    });
   }
 
 }

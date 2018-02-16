@@ -11,6 +11,9 @@ export class ToDoActions {
   static readonly DETAIL_VIEW_DEACTIVATED = featureId + '/DETAIL_VIEW_DEACTIVATED';
   static readonly DETAIL_DATA_RECEIVED = featureId + '/DETAIL_DATA_RECEIVED';
   static readonly COLLECTION_DATA_RECEIVED = featureId + '/COLLECTION_DATA_RECEIVED';
+  static readonly ADD_TAG = featureId + '/ADD_TAG';
+  static readonly REMOVE_TAG = featureId + '/REMOVE_TAG';
+  static readonly RESET_TAGS = featureId + '/RESET_TAGS';
 
   @dispatch()
   public overviewActivated = (): Action => ({
@@ -45,4 +48,20 @@ export class ToDoActions {
     payload: payload
   })
 
+  @dispatch()
+  public addTag = (payload: string): any => ({
+    type: ToDoActions.ADD_TAG,
+    payload: payload
+  })
+
+  @dispatch()
+  public removeTag = (payload: string): any => ({
+    type: ToDoActions.REMOVE_TAG,
+    payload: payload
+  })
+
+  @dispatch()
+  public resetTags = (): any => ({
+    type: ToDoActions.RESET_TAGS
+  })
 }
