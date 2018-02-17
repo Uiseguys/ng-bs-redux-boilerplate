@@ -5,6 +5,8 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
 
+import device from 'current-device';
+
 declare var window;
 
 @Component({
@@ -43,20 +45,23 @@ export class StatusComponent {
   }
 
   checkDevice() {
-    const device = window.device.default;
-    if (device.mobile()) {
+
+    const deviceSettings = device;
+
+    if (deviceSettings.mobile()) {
       this.dispatcher.uaIsMobile(true);
       this.isOverlay = true;
       this.overlayMsg = 'Mobile devices are not supported!';
       return;
     }
-    device.onChangeOrientation(newOrientation => {
-      if (device.tablet() && newOrientation === 'portrait') {
+
+    deviceSettings.onChangeOrientation(newOrientation => {
+      if (deviceSettings.tablet() && newOrientation === 'portrait') {
         this.dispatcher.uaIsTabletPortrait(true);
         this.isOverlay = true;
         this.overlayMsg = 'Please rotate to landscape mode!';
       }
-      if (device.tablet() && newOrientation === 'landscape') {
+      if (deviceSettings.tablet() && newOrientation === 'landscape') {
         this.dispatcher.uaIsTabletPortrait(false);
         this.isOverlay = false;
         this.overlayMsg = '';
