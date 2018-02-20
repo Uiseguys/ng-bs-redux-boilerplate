@@ -3,43 +3,52 @@ const { h, Context } = window.index;
 
 class ListPage {
     constructor() {
-        this.users = [];
+        this.users1 = [];
+        this.users2 = [];
     }
     customEventHandler(event) {
-        this.initUsersData();
+        if (event.detail == 'users-infinite') {
+            this.initUsers1Data();
+        }
+        if (event.detail == 'users-boxed') {
+            this.initUsers2Data();
+        }
     }
+    // doc: string = 'cwc-list?.md'
     componentWillLoad() {
-        this.initUsersData();
+        this.initUsers1Data(20);
+        this.initUsers2Data(20);
     }
-    gettemplate() {
-        return (h("scb-alert", { type: "primary" },
-            "This is a [item.name] alert  with ",
-            h("a", { href: "#[index]", class: "alert-link" }, "an example [item.complex.name]"),
-            ". Index of the component: [index]. And data2 is"));
+    initUsers1Data(count) {
+        this.getUsers(count).then(users => this.users1 = this.users1.concat(users));
+    }
+    initUsers2Data(count) {
+        this.getUsers(count).then(users => this.users2 = this.users2.concat(users));
+    }
+    getUser2Template() {
+        return (h("div", { class: "card card-18" },
+            h("img", { class: "card-img-top", src: "[[user.picture.large]]", alt: "Card image cap" }),
+            h("div", { class: "card-body" },
+                h("h5", { class: "card-title capitalized" }, "[[user.name.first]] [[user.name.last]]"),
+                h("a", { href: "#", class: "btn btn-primary" }, "Send message"))));
     }
     getUserTemplate() {
         return (h("div", { class: "card col-md-6 col-sm-12" },
             h("div", { class: "card-body" },
                 h("div", { class: "media" },
-                    h("img", { class: "d-flex mr-3 rounded", src: "[user.picture.medium]", alt: "Generic placeholder image" }),
+                    h("img", { class: "d-flex mr-3 rounded", src: "[[user.picture.medium]]", alt: "Generic placeholder image" }),
                     h("div", { class: "media-body" },
-                        h("h5", { class: "mt-0 capitalized" }, "[user.name.first] [user.name.last]"),
+                        h("h5", { class: "mt-0 capitalized" }, "[[user.name.first]] [[user.name.last]]"),
                         h("div", null,
-                            h("span", { class: "capitalized" }, "[user.location.city], [user.location.state],"),
-                            h("span", null, " [user.location.street] ")))))));
-    }
-    initUsersData() {
-        this.getUsers().then(users => this.users = this.users.concat(users));
+                            h("span", { class: "capitalized" }, "[[user.location.city]], [[user.location.state]],"),
+                            h("span", null, " [[user.location.street]] ")))))));
     }
     getUsersPage() {
-        return this.users.length / 10 + 1;
+        return (this.users1.length + this.users2.length) / 10 + 1;
     }
-    getUsers() {
+    getUsers(count = 10) {
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
-            let count = this.users.length == 0
-                ? 20
-                : 10;
             request.open('GET', `https://randomuser.me/api/?page=${this.getUsersPage()}&results=${count}&seed=abc`, true);
             request.onload = () => {
                 if (request.status >= 200 && request.status < 400) {
@@ -58,17 +67,146 @@ class ListPage {
     }
     render() {
         return (h("div", { class: "container" },
-            h("h3", null,
+            h("div", null,
+                h("h1", { id: "infinite-list-component", class: "mb-2" }, "Infinite list component"),
+                h("h2", { id: "api-and-usage-" }, "API and usage:"),
+                h("h3", { id: "props" }, "Props"),
+                h("table", null,
+                    h("thead", null,
+                        h("tr", null,
+                            h("th", null, "Prop"),
+                            h("th", null, "PropType"),
+                            h("th", null, "Required?"),
+                            h("th", null, "defaultValue"),
+                            h("th", null, "Description"))),
+                    h("tbody", null,
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "items")),
+                            h("td", null,
+                                h("code", null, "object[]")),
+                            h("td", null, "yes"),
+                            h("td", null,
+                                h("code", null, "[]")),
+                            h("td", null, "Array of objects to iterate with template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "itemAs")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "'item'")),
+                            h("td", null, "Value associated with current value in template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "template")),
+                            h("td", null,
+                                h("code", null, "VirtualNode")),
+                            h("td", null, "yes"),
+                            h("td", null, "-"),
+                            h("td", null, "Template to render.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "bindToList")),
+                            h("td", null,
+                                h("code", null, "boolean")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "false")),
+                            h("td", null, "Value which sets if component renders in fixed height wrapper or with infinite height.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "debounce")),
+                            h("td", null,
+                                h("code", null, "number")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "300")),
+                            h("td", null,
+                                "Debounce time between fired ",
+                                h("code", null, "'onBottomReach'"),
+                                " event")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "bottomOffset")),
+                            h("td", null,
+                                h("code", null, "number")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "false")),
+                            h("td", null,
+                                "Offset in ",
+                                h("code", null, "px"),
+                                " from bottom of last list element.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "addClass")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null, "Class to add to every template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "addClassFirst")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null, "Class to add to first template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "addClassLast")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null, "Class to add to last template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "addClassEven")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null, "Class to add to even template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "addClassOdd")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null, "Class to add to odd template.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "wrapperClass")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null, "-"),
+                            h("td", null,
+                                "Class to ",
+                                h("code", null, "<div></div>"),
+                                " wrapper of list."))))),
+            h("h4", { class: "mt-5" }, "Boxed list of users with random data: "),
+            " ",
+            h("br", null),
+            h("cwc-list", { id: "users-boxed", items: this.users2, itemAs: 'user', template: this.getUser2Template(), bindToList: true, wrapperClass: 'row d-flex justify-content-around mx-0', addClass: 'my-3' }, " "),
+            h("br", null),
+            h("br", null),
+            h("h4", null,
                 "Infinite list of users with data from ",
                 h("a", { href: "randomuser.me" }, "randomuser.me"),
                 ": "),
             h("br", null),
-            h("div", { class: "row" },
-                h("scb-list", { items: this.users, itemAs: 'user', template: this.getUserTemplate(), bindToList: false, wrapperClass: 'row' }))));
+            h("div", null,
+                h("cwc-list", { id: "users-infinite", items: this.users1, itemAs: 'user', template: this.getUserTemplate(), bindToList: false, wrapperClass: 'row', addClass: 'custom mxy-2', addClassEven: 'custom-even', addClassFirst: 'custom-first' }))));
     }
     static get is() { return "list-page"; }
-    static get properties() { return { "users": { "state": true } }; }
-    static get style() { return ".capitalized {\n  text-transform: capitalize;\n}"; }
+    static get properties() { return { "users1": { "state": true }, "users2": { "state": true } }; }
+    static get style() { return ".capitalized {\n  text-transform: capitalize;\n}\n\n.card.card-18 {\n  width: 14rem;\n}\n\n#users-boxed {\n  height: 500px;\n  display: block;\n  overflow-y: auto;\n}\n\ndiv.docs h4 {\n  margin-top: 2rem;\n}\n\ndiv.docs h3 {\n  margin-top: 3rem;\n}\n\ndiv.docs h2 {\n  margin-top: 4rem;\n}"; }
 }
 
 export { ListPage };

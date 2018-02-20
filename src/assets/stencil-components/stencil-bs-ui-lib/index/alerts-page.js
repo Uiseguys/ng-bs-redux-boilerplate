@@ -170,7 +170,13 @@ class StencilBootstrapDemo {
                         h("li", null,
                             h("stencil-route-link", { url: "/tag", urlMatch: ['/tag'], activeClass: "active", exact: true }, "Tag")),
                         h("li", null,
-                            h("stencil-route-link", { url: "/form", urlMatch: ['/form'], activeClass: "active", exact: true }, "Form")))),
+                            h("stencil-route-link", { url: "/form", urlMatch: ['/form'], activeClass: "active", exact: true }, "Form")),
+                        h("li", null,
+                            h("stencil-route-link", { url: "/dialog", urlMatch: ['/dialog'], activeClass: "active", exact: true }, "Dialog")),
+                        h("li", null,
+                            h("stencil-route-link", { url: "/tooltip", urlMatch: ['/tooltip'], activeClass: "active", exact: true }, "Tooltip")),
+                        h("li", null,
+                            h("stencil-route-link", { url: "/navbar", urlMatch: ['/navbar'], activeClass: "active", exact: true }, "Navbar")))),
                 h("div", { class: "col-12 col-md-9" },
                     h("stencil-router", { id: "router" },
                         h("stencil-route", { url: ['/', '/alerts'], component: "alerts-page", exact: true }),
@@ -185,7 +191,10 @@ class StencilBootstrapDemo {
                         h("stencil-route", { url: ['/multiselect'], component: "multiselect-page", exact: true }),
                         " ",
                         h("stencil-route", { url: ['/tag'], component: "tag-page", exact: true }),
-                        h("stencil-route", { url: ['/form'], component: "form-page", exact: true }))))));
+                        h("stencil-route", { url: ['/form'], component: "form-page", exact: true }),
+                        h("stencil-route", { url: ['/dialog'], component: "dialog-page", exact: true }),
+                        h("stencil-route", { url: ['/tooltip'], component: "tooltip-page", exact: true }),
+                        h("stencil-route", { url: ['/navbar'], component: "navbar-page", exact: true }))))));
     }
     static get is() { return "stencil-bootstrap-demo"; }
 }
