@@ -28,6 +28,10 @@
             <app-link [target]="'TODOS'"><i class="icon-playlist_add_check x2"></i><span>ToDo's</span></app-link>
         </li>
 
+        <li tabindex="0" class="menu-red" [ngClass]="{'active': activeState === 'SHOWCASE'}">
+            <app-link [target]="'SHOWCASE'"><i class="icon-play_circle_outline x2"></i><span>Diagnostics</span></app-link>
+        </li>
+
         <li tabindex="0" class="menu-white menu-divider-top sticky-footer" [ngClass]="{'active': activeState === 'dashboard10'}" (click)="setActiveState('dashboard10')" >
           <app-link><i class="icon-search x2"></i><span>App Search</span></app-link>
         </li>
