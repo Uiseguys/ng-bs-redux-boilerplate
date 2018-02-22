@@ -38,14 +38,11 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
-<<<<<<< HEAD
     "ng2-select2": "^1.0.0-beta.11",
     "ng2-validation": "^4.2.0",
     "ngx-chips": "^1.6.4",
     "popper.js": "^1.12.9",
-=======
     "popper.js": "^1.13.0",
->>>>>>> origin/develop
     "redux": "^3.7.2",
     "redux-first-router": "^0.0.16-next",
     "redux-first-router-link": "^1.4.2",
