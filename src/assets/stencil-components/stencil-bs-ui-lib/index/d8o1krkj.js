@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-const{h,Context}=window.index;class StencilBootstrapDemo{render(){return h("div",{class:"container-fluid"},h("div",{class:"row"},h("div",{class:"col-12 text-center"},h("h1",null,"Web Components for Bootstrap 4 Beta"),h("p",null,"Built with ",h("a",{href:"https://stenciljs.com",target:"blank"},"Stencil")," <3"))),h("div",{class:"row"},h("div",null,h("navbar-page",null))))}static get is(){return"stencil-bootstrap-demo"}}export{StencilBootstrapDemo};

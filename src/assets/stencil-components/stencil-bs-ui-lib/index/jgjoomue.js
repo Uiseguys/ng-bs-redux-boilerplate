@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-const{h,Context}=window.index;class DiaglogPage{openModalHandler(){console.log("openModalHandler")}closeModalHandler(){console.log("closeModalHandler")}render(){return h("scb-dialog",{btntype:"success",title:"Info",content:"Modal Content",centered:!0,animation:!0,size:"",backdrop:!0,keyboard:!0,modalfocus:!0,show:!0})}static get is(){return"dialog-page"}}export{DiaglogPage as DialogPage};
