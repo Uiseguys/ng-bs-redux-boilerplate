@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h,Context}=window.index;class ScbBreadcrumb{constructor(){this.items=[]}render(){return h("nav",{class:"breadcrumb"},this.items.map(t=>t.active?this.getSpanBreadcrumb(t):this.getAnchorBreadcrumb(t)))}getSpanBreadcrumb(t){return h("span",{class:"breadcrumb-item active"},t.title)}getAnchorBreadcrumb(t){return h("a",{class:"breadcrumb-item",href:t.href,target:t.target},t.title)}static get is(){return"scb-breadcrumb"}static get properties(){return{items:{type:"Any",mutable:!0}}}}export{ScbBreadcrumb};
