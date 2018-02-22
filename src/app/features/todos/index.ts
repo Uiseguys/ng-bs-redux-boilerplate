@@ -17,5 +17,5 @@
  */
 
 export const featureId = 'todos';
-export const todoEndpoint = 'http://demo8703269.mockable.io/todos';
+export const todoEndpoint = 'https://loopback3-boilerplate.herokuapp.com/api/todos';
 
