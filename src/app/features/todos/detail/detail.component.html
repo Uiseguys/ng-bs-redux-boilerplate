@@ -1,4 +1,3 @@
 <div *ngIf="todo$ | async as todo">
-   {{ todo | json }}
+  <app-todo-form [initialValue]="todo" (onSubmit)="handleSubmit($event)"></app-todo-form>
 </div>
-

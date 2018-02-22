@@ -10,9 +10,11 @@
       "assets": [
         "assets",
         "favicon.ico",
-        { "glob": "**/*",
+        {
+          "glob": "**/*",
           "input": "../node_modules/@ui-guys/stencil-bs-ui-lib/dist",
-          "output": "./assets/stencil-bs-ui-lib" }
+          "output": "./assets/stencil-bs-ui-lib"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -22,10 +24,10 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "styles.scss"
-      ],
+      "styles": ["styles.scss"],
       "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/select2/dist/js/select2.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

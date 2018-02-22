@@ -2,9 +2,8 @@
   <li *ngFor="let todo of todos; index as i; first as isFirst">
 
     <div class="todo" (click)="collectionItemClicked.emit(todo.id)">
-      {{ todo.task }}
+      {{ todo.title }}
     </div>
 
   </li>
-
 </ul>
