@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build",
-    "serve:heroku": "http-server www"
+    "serve:heroku": "http-server build"
   },
   "private": false,
   "dependencies": {
