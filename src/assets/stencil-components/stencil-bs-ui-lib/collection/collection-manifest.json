@@ -1,0 +1,1483 @@
+{
+  "components": [
+    {
+      "tag": "alerts-page",
+      "dependencies": [
+        "scb-alert"
+      ],
+      "componentClass": "AlertsPage",
+      "componentPath": "pages/alerts-page/alerts-page.js",
+      "styles": {},
+      "states": [
+        {
+          "name": "hasAnimatableDismissibleAlert"
+        },
+        {
+          "name": "hasDismissibleAlert"
+        }
+      ]
+    },
+    {
+      "tag": "badge-page",
+      "dependencies": [
+        "scb-badge"
+      ],
+      "componentClass": "BadgePage",
+      "componentPath": "pages/badge-page/badge-page.js",
+      "styles": {}
+    },
+    {
+      "tag": "breadcrumb-page",
+      "dependencies": [
+        "scb-breadcrumb"
+      ],
+      "componentClass": "BreadcrumbPage",
+      "componentPath": "pages/breadcrumb-page/breadcrumb-page.js",
+      "styles": {},
+      "shadow": true
+    },
+    {
+      "tag": "cwc-dropdown",
+      "dependencies": [],
+      "componentClass": "StencilComponent",
+      "componentPath": "components/cwc-dropdown/cwc-dropdown.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-dropdown/cwc-dropdown.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "dropdownPlacement",
+          "type": "Any",
+          "watch": [
+            "placementDidChangeHandler"
+          ]
+        },
+        {
+          "name": "offsetString",
+          "type": "String"
+        },
+        {
+          "name": "triggerOverflow",
+          "type": "Boolean",
+          "watch": [
+            "overflowDidChangeHandler"
+          ]
+        }
+      ],
+      "states": [
+        {
+          "name": "openState"
+        },
+        {
+          "name": "popper"
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        },
+        {
+          "name": "open"
+        },
+        {
+          "name": "toggle"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "cwc-list",
+      "dependencies": [],
+      "componentClass": "CwcList",
+      "componentPath": "components/cwc-list/cwc-list.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-list/cwc-list.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "addClass",
+          "type": "String"
+        },
+        {
+          "name": "addClassEven",
+          "type": "String"
+        },
+        {
+          "name": "addClassFirst",
+          "type": "String"
+        },
+        {
+          "name": "addClassLast",
+          "type": "String"
+        },
+        {
+          "name": "addClassOdd",
+          "type": "String"
+        },
+        {
+          "name": "bindToList",
+          "type": "Boolean"
+        },
+        {
+          "name": "bottomOffset",
+          "type": "Number"
+        },
+        {
+          "name": "debounce",
+          "type": "Number"
+        },
+        {
+          "name": "itemAs",
+          "type": "String"
+        },
+        {
+          "name": "items",
+          "watch": [
+            "itemsdidChangeHandler"
+          ]
+        },
+        {
+          "name": "template"
+        },
+        {
+          "name": "wrapperClass",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "itemsData"
+        }
+      ],
+      "methods": [
+        {
+          "name": "loadMore"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "onBottomReach"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-list",
+      "dependencies": [],
+      "componentClass": "CwcList",
+      "componentPath": "components/cwc-list/cwc-list.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-list/cwc-list.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "addClass",
+          "type": "String"
+        },
+        {
+          "name": "addClassEven",
+          "type": "String"
+        },
+        {
+          "name": "addClassFirst",
+          "type": "String"
+        },
+        {
+          "name": "addClassLast",
+          "type": "String"
+        },
+        {
+          "name": "addClassOdd",
+          "type": "String"
+        },
+        {
+          "name": "bindToList",
+          "type": "Boolean"
+        },
+        {
+          "name": "bottomOffset",
+          "type": "Number"
+        },
+        {
+          "name": "debounce",
+          "type": "Number"
+        },
+        {
+          "name": "itemAs",
+          "type": "String"
+        },
+        {
+          "name": "items",
+          "watch": [
+            "itemsdidChangeHandler"
+          ]
+        },
+        {
+          "name": "template"
+        },
+        {
+          "name": "wrapperClass",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "itemsData"
+        }
+      ],
+      "methods": [
+        {
+          "name": "loadMore"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "onBottomReach"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-multiselect",
+      "dependencies": [
+        "scb-badge"
+      ],
+      "componentClass": "CwcMultiselect",
+      "componentPath": "components/cwc-multiselect/cwc-multiselect.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-multiselect/cwc-multiselect.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "idValue",
+          "type": "String"
+        },
+        {
+          "name": "minSearchLength",
+          "type": "Number"
+        },
+        {
+          "name": "placeholder",
+          "type": "String"
+        },
+        {
+          "name": "searchKey",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "filterValue"
+        },
+        {
+          "name": "focusIndex"
+        },
+        {
+          "name": "justAddedLabel"
+        },
+        {
+          "name": "labels"
+        },
+        {
+          "name": "optionsShown"
+        },
+        {
+          "name": "results"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "destroy",
+          "method": "destroyHandler",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.down",
+          "method": "handleDownArrow",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.enter",
+          "method": "handleEnter",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.escape",
+          "method": "handleEscape",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.up",
+          "method": "handleUpArrow",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        }
+      ],
+      "events": [
+        {
+          "event": "multiselectOnSubmit"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-tag",
+      "dependencies": [],
+      "componentClass": "CwcTag",
+      "componentPath": "components/cwc-tag/cwc-tag.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-tag/cwc-tag.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "classes",
+          "type": "String"
+        },
+        {
+          "name": "closable",
+          "type": "Boolean"
+        },
+        {
+          "name": "imgLink",
+          "type": "String"
+        },
+        {
+          "name": "limitTo",
+          "type": "Number"
+        },
+        {
+          "name": "link",
+          "type": "String"
+        },
+        {
+          "name": "onCloseData",
+          "type": "Any"
+        },
+        {
+          "name": "removeOnClose",
+          "type": "Boolean"
+        },
+        {
+          "name": "rounded",
+          "type": "Boolean"
+        },
+        {
+          "name": "tagType",
+          "watch": [
+            "watchHandler"
+          ]
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "watch": [
+            "textWatchHandler"
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        }
+      ],
+      "hostElement": {
+        "name": "element"
+      },
+      "events": [
+        {
+          "event": "tagCloseEvent"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-tag",
+      "dependencies": [],
+      "componentClass": "CwcTag",
+      "componentPath": "components/cwc-tag/cwc-tag.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-tag/cwc-tag.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "classes",
+          "type": "String"
+        },
+        {
+          "name": "closable",
+          "type": "Boolean"
+        },
+        {
+          "name": "imgLink",
+          "type": "String"
+        },
+        {
+          "name": "limitTo",
+          "type": "Number"
+        },
+        {
+          "name": "link",
+          "type": "String"
+        },
+        {
+          "name": "onCloseData",
+          "type": "Any"
+        },
+        {
+          "name": "removeOnClose",
+          "type": "Boolean"
+        },
+        {
+          "name": "rounded",
+          "type": "Boolean"
+        },
+        {
+          "name": "tagType",
+          "watch": [
+            "watchHandler"
+          ]
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "watch": [
+            "textWatchHandler"
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        }
+      ],
+      "hostElement": {
+        "name": "element"
+      },
+      "events": [
+        {
+          "event": "tagCloseEvent"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-typeahead",
+      "dependencies": [],
+      "componentClass": "CwcTypeahead",
+      "componentPath": "components/cwc-typeahead/cwc-typeahead.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-typeahead/cwc-typeahead.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "idValue",
+          "type": "String"
+        },
+        {
+          "name": "minSearchLength",
+          "type": "Number"
+        },
+        {
+          "name": "placeholder",
+          "type": "String"
+        },
+        {
+          "name": "searchKey",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "filterValue"
+        },
+        {
+          "name": "focusIndex"
+        },
+        {
+          "name": "optionsShown"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown.down",
+          "method": "handleDownArrow",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.enter",
+          "method": "handleEnter",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.escape",
+          "method": "handleEscape",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.up",
+          "method": "handleUpArrow",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        }
+      ],
+      "events": [
+        {
+          "event": "typeaheadOnSubmit"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-typeahead",
+      "dependencies": [],
+      "componentClass": "CwcTypeahead",
+      "componentPath": "components/cwc-typeahead/cwc-typeahead.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-typeahead/cwc-typeahead.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "idValue",
+          "type": "String"
+        },
+        {
+          "name": "minSearchLength",
+          "type": "Number"
+        },
+        {
+          "name": "placeholder",
+          "type": "String"
+        },
+        {
+          "name": "searchKey",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "filterValue"
+        },
+        {
+          "name": "focusIndex"
+        },
+        {
+          "name": "optionsShown"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown.down",
+          "method": "handleDownArrow",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.enter",
+          "method": "handleEnter",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.escape",
+          "method": "handleEscape",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "keydown.up",
+          "method": "handleUpArrow",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close"
+        }
+      ],
+      "events": [
+        {
+          "event": "typeaheadOnSubmit"
+        }
+      ]
+    },
+    {
+      "tag": "dropdown-page",
+      "dependencies": [
+        "cwc-dropdown"
+      ],
+      "componentClass": "StencilComponent",
+      "componentPath": "pages/dropdown-page/dropdown-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/dropdown-page/dropdown-page.scss"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "exampleAlignment"
+        },
+        {
+          "name": "examplePlacement"
+        },
+        {
+          "name": "exampleTriggerOverflow"
+        }
+      ]
+    },
+    {
+      "tag": "fcl-image",
+      "dependencies": [],
+      "componentClass": "FclImage",
+      "componentPath": "components/fcl-image/fcl-image.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/fcl-image/css/fcl-image-css.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "brokenUrl",
+          "type": "Any"
+        },
+        {
+          "name": "height",
+          "type": "Any"
+        },
+        {
+          "name": "src",
+          "type": "Any"
+        },
+        {
+          "name": "width",
+          "type": "Any"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "fcl-image-page",
+      "dependencies": [
+        "fcl-image"
+      ],
+      "componentClass": "FclImagePage",
+      "componentPath": "pages/fcl-image-page/fcl-image-page.js",
+      "styles": {}
+    },
+    {
+      "tag": "fcl-video-player",
+      "dependencies": [
+        "fcl-image"
+      ],
+      "componentClass": "FclVideoPLayer",
+      "componentPath": "components/fcl-video-player/fcl-video-player.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/fcl-video-player/css/vjs.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "controls",
+          "type": "Boolean"
+        },
+        {
+          "name": "poster",
+          "type": "String"
+        },
+        {
+          "name": "thumbnail",
+          "type": "Any"
+        }
+      ],
+      "states": [
+        {
+          "name": "toggle"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "file-input-page",
+      "dependencies": [
+        "scb-file-input"
+      ],
+      "componentClass": "FileInputPage",
+      "componentPath": "pages/file-input-page/file-input-page.js",
+      "styles": {}
+    },
+    {
+      "tag": "form-page",
+      "dependencies": [
+        "my-checkbox",
+        "my-dropdown",
+        "my-dynamic-form",
+        "my-input"
+      ],
+      "componentClass": "FormPage",
+      "componentPath": "pages/form-page/form-page.js",
+      "styles": {},
+      "states": [
+        {
+          "name": "ajv"
+        },
+        {
+          "name": "form"
+        },
+        {
+          "name": "schema"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "list-page",
+      "dependencies": [
+        "cwc-list"
+      ],
+      "componentClass": "ListPage",
+      "componentPath": "pages/list-page/list-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/list-page/list-page.scss"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "users1"
+        },
+        {
+          "name": "users2"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "onBottomReach",
+          "method": "customEventHandler",
+          "passive": false,
+          "capture": false
+        }
+      ]
+    },
+    {
+      "tag": "modal-page",
+      "dependencies": [
+        "scb-modal"
+      ],
+      "componentClass": "ModalPage",
+      "componentPath": "pages/modal-page/modal-page.js",
+      "styles": {},
+      "listeners": [
+        {
+          "event": "onCloseModal",
+          "method": "closeModalHandler",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "onOpenModal",
+          "method": "openModalHandler",
+          "passive": false,
+          "capture": false
+        }
+      ]
+    },
+    {
+      "tag": "multiselect-page",
+      "dependencies": [
+        "cwc-multiselect",
+        "cwc-tag"
+      ],
+      "componentClass": "MultiselectPage",
+      "componentPath": "pages/multiselect-page/multiselect-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/multiselect-page/multiselect-page.scss"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "result"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "multiselectOnSubmit",
+          "method": "typeaheadOnSubmit",
+          "passive": false,
+          "capture": false
+        }
+      ]
+    },
+    {
+      "tag": "my-checkbox",
+      "dependencies": [],
+      "componentClass": "MyCheckbox",
+      "componentPath": "components/my-checkbox/my-checkbox.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "for",
+          "type": "String"
+        },
+        {
+          "name": "id",
+          "type": "String"
+        },
+        {
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "name": "value",
+          "type": "Boolean"
+        }
+      ],
+      "states": [
+        {
+          "name": "currentValue"
+        }
+      ],
+      "hostElement": {
+        "name": "element"
+      },
+      "events": [
+        {
+          "event": "postValue"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "my-dropdown",
+      "dependencies": [],
+      "componentClass": "MyDropdown",
+      "componentPath": "components/my-dropdown/my-dropdown.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "for",
+          "type": "String"
+        },
+        {
+          "name": "id",
+          "type": "String"
+        },
+        {
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "name": "value",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "currentValue"
+        }
+      ],
+      "hostElement": {
+        "name": "element"
+      },
+      "events": [
+        {
+          "event": "postValue"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "my-dynamic-form",
+      "dependencies": [],
+      "componentClass": "MyDynamicForm",
+      "componentPath": "components/my-dynamic-form/my-dynamic-form.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "ajv",
+          "type": "Any"
+        },
+        {
+          "name": "form",
+          "type": "Any"
+        },
+        {
+          "name": "schema",
+          "type": "Any"
+        }
+      ],
+      "states": [
+        {
+          "name": "allIds"
+        },
+        {
+          "name": "allTitles"
+        },
+        {
+          "name": "changedData"
+        },
+        {
+          "name": "changeValueChecked"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "filledData"
+        },
+        {
+          "name": "invalidMessage"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "postValue",
+          "method": "postValueHandler",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "shadow": true
+    },
+    {
+      "tag": "my-input",
+      "dependencies": [],
+      "componentClass": "MyInput",
+      "componentPath": "components/my-input/my-input.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "../node_modules/bootstrap/dist/css/bootstrap.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "for",
+          "type": "String"
+        },
+        {
+          "name": "format",
+          "type": "Any"
+        },
+        {
+          "name": "id",
+          "type": "String"
+        },
+        {
+          "name": "title",
+          "type": "String"
+        },
+        {
+          "name": "value",
+          "type": "Any"
+        }
+      ],
+      "states": [
+        {
+          "name": "currentDate"
+        },
+        {
+          "name": "currentValue"
+        }
+      ],
+      "hostElement": {
+        "name": "element"
+      },
+      "events": [
+        {
+          "event": "postValue"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "navbar-page",
+      "dependencies": [
+        "scb-navbar"
+      ],
+      "componentClass": "NavbarPage",
+      "componentPath": "pages/navbar-page/navbar-page.js",
+      "styles": {}
+    },
+    {
+      "tag": "scb-alert",
+      "dependencies": [],
+      "componentClass": "ScbAlert",
+      "componentPath": "components/scb-alert/scb-alert.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "animatable",
+          "type": "Boolean",
+          "watch": [
+            "componentWillLoad"
+          ]
+        },
+        {
+          "name": "dismissible",
+          "type": "Boolean"
+        },
+        {
+          "name": "onDismiss"
+        },
+        {
+          "name": "show",
+          "type": "Boolean"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "fade"
+        }
+      ],
+      "methods": [
+        {
+          "name": "dismiss"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "toggleVisibility"
+        }
+      ]
+    },
+    {
+      "tag": "scb-badge",
+      "dependencies": [],
+      "componentClass": "ScbBadge",
+      "componentPath": "components/scb-badge/scb-badge.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "link",
+          "type": "String"
+        },
+        {
+          "name": "pill",
+          "type": "Boolean"
+        },
+        {
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "tag": "scb-breadcrumb",
+      "dependencies": [],
+      "componentClass": "ScbBreadcrumb",
+      "componentPath": "components/scb-breadcrumb/scb-breadcrumb.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "items",
+          "mutable": true
+        }
+      ]
+    },
+    {
+      "tag": "scb-file-input",
+      "dependencies": [],
+      "componentClass": "ScbFileInput",
+      "componentPath": "components/scb-file-input/scb-file-input.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/scb-file-input/scb-file-input.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "accept",
+          "type": "String"
+        },
+        {
+          "name": "files"
+        },
+        {
+          "name": "formDataName",
+          "type": "String"
+        },
+        {
+          "name": "headers",
+          "type": "String"
+        },
+        {
+          "name": "maxFiles",
+          "type": "Number"
+        },
+        {
+          "name": "maxFileSize",
+          "type": "Number"
+        },
+        {
+          "name": "method",
+          "type": "String"
+        },
+        {
+          "name": "noAuto",
+          "type": "Boolean"
+        },
+        {
+          "name": "nodrop",
+          "type": "Boolean"
+        },
+        {
+          "name": "target",
+          "type": "String"
+        },
+        {
+          "name": "timeout",
+          "type": "Number"
+        },
+        {
+          "name": "type"
+        }
+      ],
+      "states": [
+        {
+          "name": "element"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "dragenter",
+          "method": "cancelDefaultDragEnter",
+          "capture": false
+        },
+        {
+          "event": "dragover",
+          "method": "cancelDefaultDragOver",
+          "capture": false
+        },
+        {
+          "event": "drop",
+          "method": "onDrop",
+          "capture": false
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "scb-modal",
+      "dependencies": [],
+      "componentClass": "ScbModal",
+      "componentPath": "components/scb-modal/scb-modal.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "animation",
+          "type": "Boolean"
+        },
+        {
+          "name": "backdrop",
+          "type": "Any"
+        },
+        {
+          "name": "btntype",
+          "type": "String"
+        },
+        {
+          "name": "centered",
+          "type": "Boolean"
+        },
+        {
+          "name": "keyboard",
+          "type": "Boolean"
+        },
+        {
+          "name": "modalContent",
+          "type": "String"
+        },
+        {
+          "name": "modalfocus",
+          "type": "Boolean"
+        },
+        {
+          "name": "modalTitle",
+          "type": "String"
+        },
+        {
+          "name": "show",
+          "type": "Boolean"
+        },
+        {
+          "name": "size",
+          "type": "String"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "onCloseModal"
+        },
+        {
+          "event": "onOpenModal"
+        }
+      ]
+    },
+    {
+      "tag": "scb-navbar",
+      "dependencies": [],
+      "componentClass": "ScbNavbar",
+      "componentPath": "components/scb-navbar/scb-navbar.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "bgcolor",
+          "type": "String"
+        },
+        {
+          "name": "navbarcolor",
+          "type": "String"
+        },
+        {
+          "name": "placement",
+          "type": "String"
+        },
+        {
+          "name": "size",
+          "type": "String"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "scb-tooltip",
+      "dependencies": [],
+      "componentClass": "ScbTooltip",
+      "componentPath": "components/scb-tooltip/scb-tooltip.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/scb-tooltip/scb-tooltip.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "delay",
+          "type": "Any"
+        },
+        {
+          "name": "href",
+          "type": "String"
+        },
+        {
+          "name": "offset",
+          "type": "String"
+        },
+        {
+          "name": "placement",
+          "type": "String"
+        },
+        {
+          "name": "target",
+          "type": "String"
+        },
+        {
+          "name": "tooltipTitle",
+          "type": "String"
+        },
+        {
+          "name": "trigger",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "tooltip"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "stencil-bootstrap-demo",
+      "dependencies": [
+        "modal-page",
+        "navbar-page",
+        "tooltip-page",
+        "video-player-page"
+      ],
+      "componentClass": "StencilBootstrapDemo",
+      "componentPath": "pages/stencil-bootstrap-demo/stencil-bootstrap-demo.js",
+      "styles": {}
+    },
+    {
+      "tag": "tag-page",
+      "dependencies": [
+        "cwc-tag"
+      ],
+      "componentClass": "TagPage",
+      "componentPath": "pages/tag-page/tag-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/tag-page/tag-page.scss"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "tooltip-page",
+      "dependencies": [
+        "scb-tooltip"
+      ],
+      "componentClass": "TolltipPage",
+      "componentPath": "pages/tooltip-page/tooltip-page.js",
+      "styles": {}
+    },
+    {
+      "tag": "typeahead-page",
+      "dependencies": [
+        "cwc-typeahead"
+      ],
+      "componentClass": "StencilComponent",
+      "componentPath": "pages/typeahead-page/typeahead-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/typeahead-page/typeahead-page.scss"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "result"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "typeaheadOnSubmit",
+          "method": "typeaheadOnSubmit",
+          "passive": false,
+          "capture": false
+        }
+      ]
+    },
+    {
+      "tag": "video-player-page",
+      "dependencies": [
+        "fcl-video-player"
+      ],
+      "componentClass": "VideoPlayerPage",
+      "componentPath": "pages/video-player-page/video-player-page.js",
+      "styles": {}
+    }
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.6.3",
+    "typescriptVersion": "2.7.2"
+  }
+}
