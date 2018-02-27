@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-index.loadComponents(function(e,n,o){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var t=function(){function e(){}return e.prototype.render=function(){return[n("div",null,n("fcl-image",{brokenUrl:"https://s3.amazonaws.com/images.seroundtable.com/invalid-url-1354629517.png",src:"https://www.w3schools.com/howto/img_fjords.jpg"}))]},Object.defineProperty(e,"is",{get:function(){return"fcl-image-page"},enumerable:!0,configurable:!0}),e}();e.FclImagePage=t},"farmfpe4");

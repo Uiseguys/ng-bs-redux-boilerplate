@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-const{h,Context}=window.index;class BreadcrumbPage{constructor(){this.breadcrumbItems=[{active:!1,href:"/alerts",target:"blank",title:"Alerts"},{active:!1,href:"/badge",target:"blank",title:"Badge"},{active:!0,href:"/breadcrumb",target:"blank",title:"Breadcrumbs"}]}render(){return h("scb-breadcrumb",{items:this.breadcrumbItems})}static get is(){return"breadcrumb-page"}static get encapsulation(){return"shadow"}}export{BreadcrumbPage};
