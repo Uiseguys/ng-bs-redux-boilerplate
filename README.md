@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Generate CHANGELOG
+
+Just run `npm run version`.
+Please reference [this document](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md) to know how to format your commit.
+Here are some examples
+
+### Bug Fixes
+
+* **common:** more detailed info about error
+
+`fix(common): more detailed info about error`
+
+### Features
+
+* **luncher:** trim white space
+
+`feat(luncher): trim whitespace`
