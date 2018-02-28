@@ -101,6 +101,36 @@ declare global {
 
 
 import {
+  CwcMarkdown as CwcMarkdown
+} from './components/cwc-markdown/cwc-markdown';
+
+declare global {
+  interface HTMLCwcMarkdownElement extends CwcMarkdown, HTMLStencilElement {
+  }
+  var HTMLCwcMarkdownElement: {
+    prototype: HTMLCwcMarkdownElement;
+    new (): HTMLCwcMarkdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "cwc-markdown": HTMLCwcMarkdownElement;
+  }
+  interface ElementTagNameMap {
+    "cwc-markdown": HTMLCwcMarkdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "cwc-markdown": JSXElements.CwcMarkdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CwcMarkdownAttributes extends HTMLAttributes {
+      data?: string;
+    }
+  }
+}
+
+
+import {
   CwcMultiselect as CwcMultiselect
 } from './components/cwc-multiselect/cwc-multiselect';
 
@@ -501,6 +531,37 @@ declare global {
 
 
 import {
+  ScbCollapse as ScbCollapse
+} from './components/scb-collapse/scb-collapse';
+
+declare global {
+  interface HTMLScbCollapseElement extends ScbCollapse, HTMLStencilElement {
+  }
+  var HTMLScbCollapseElement: {
+    prototype: HTMLScbCollapseElement;
+    new (): HTMLScbCollapseElement;
+  };
+  interface HTMLElementTagNameMap {
+    "scb-collapse": HTMLScbCollapseElement;
+  }
+  interface ElementTagNameMap {
+    "scb-collapse": HTMLScbCollapseElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "scb-collapse": JSXElements.ScbCollapseAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ScbCollapseAttributes extends HTMLAttributes {
+      collapseid?: string;
+      items?: any[];
+    }
+  }
+}
+
+
+import {
   ScbFileInput as ScbFileInput
 } from './components/scb-file-input/scb-file-input';
 
@@ -741,6 +802,36 @@ declare global {
 
 
 import {
+  CollapsePage as CollapsePage
+} from './pages/collapse-page/collapse-page';
+
+declare global {
+  interface HTMLCollapsePageElement extends CollapsePage, HTMLStencilElement {
+  }
+  var HTMLCollapsePageElement: {
+    prototype: HTMLCollapsePageElement;
+    new (): HTMLCollapsePageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "collapse-page": HTMLCollapsePageElement;
+  }
+  interface ElementTagNameMap {
+    "collapse-page": HTMLCollapsePageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "collapse-page": JSXElements.CollapsePageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CollapsePageAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   StencilComponent as DropdownPage
 } from './pages/dropdown-page/dropdown-page';
 
@@ -884,6 +975,36 @@ declare global {
   }
   namespace JSXElements {
     export interface ListPageAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  MarkdownPage as MarkdownPage
+} from './pages/markdown-page/markdown-page';
+
+declare global {
+  interface HTMLMarkdownPageElement extends MarkdownPage, HTMLStencilElement {
+  }
+  var HTMLMarkdownPageElement: {
+    prototype: HTMLMarkdownPageElement;
+    new (): HTMLMarkdownPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "markdown-page": HTMLMarkdownPageElement;
+  }
+  interface ElementTagNameMap {
+    "markdown-page": HTMLMarkdownPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "markdown-page": JSXElements.MarkdownPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface MarkdownPageAttributes extends HTMLAttributes {
       
     }
   }

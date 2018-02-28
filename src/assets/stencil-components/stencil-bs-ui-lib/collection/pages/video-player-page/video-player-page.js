@@ -129,7 +129,20 @@ export class VideoPlayerPage {
                                     h("p", null,
                                         "The ",
                                         h("code", null, "poster"),
-                                        " attribute specifies an image shown while downloading"))))))),
+                                        " attribute specifies an image shown while downloading")))),
+                        h("div", { class: "details" },
+                            h("div", { class: "details-name" },
+                                h("p", null,
+                                    h("code", null, "thumbnail"))),
+                            h("div", { class: "details-info" },
+                                h("p", null,
+                                    h("code", null, "Json Array")),
+                                h("marked-element", null,
+                                    h("p", null,
+                                        "The ",
+                                        h("code", null, "thumbnail"),
+                                        " attribute specifies an image shown in progress bar while hovering on them"),
+                                    h("p", null, "This is optional attribute. If we don't pass this attrib this will not showing thumbnail image while hovering on progress bar"))))))),
         ];
     }
     static get is() { return "video-player-page"; }
