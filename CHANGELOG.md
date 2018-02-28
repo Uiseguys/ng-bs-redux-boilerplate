@@ -2,6 +2,11 @@
 ## [0.13.18](https://github.com/Uiseguys/ng-bs-redux-boilerplate/compare/v0.13.16...v0.13.18) (2018-02-28)
 
 
+### Features
+
+* **test:** Update changelog ([b571426](https://github.com/Uiseguys/ng-bs-redux-boilerplate/commit/b571426))
+
+
 
 <a name="0.13.16"></a>
 ## [0.13.16](https://github.com/Uiseguys/ng-bs-redux-boilerplate/compare/v0.13.15...v0.13.16) (2018-02-20)
