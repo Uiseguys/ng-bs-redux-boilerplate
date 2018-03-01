@@ -387,6 +387,61 @@
       ]
     },
     {
+      "tag": "cwc-progress-bar",
+      "dependencies": [],
+      "componentClass": "CwcProgressBar",
+      "componentPath": "components/cwc-progress-bar/cwc-progress-bar.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-progress-bar/cwc-progress-bar.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "animated",
+          "type": "Boolean"
+        },
+        {
+          "name": "classes",
+          "type": "String"
+        },
+        {
+          "name": "closable",
+          "type": "Boolean"
+        },
+        {
+          "name": "height",
+          "type": "Number"
+        },
+        {
+          "name": "progress",
+          "type": "Number",
+          "watch": [
+            "progressWatchHandler"
+          ]
+        },
+        {
+          "name": "progressBarType",
+          "watch": [
+            "watchHandler"
+          ]
+        },
+        {
+          "name": "striped",
+          "type": "Boolean"
+        },
+        {
+          "name": "text",
+          "type": "String",
+          "watch": [
+            "textWatchHandler"
+          ]
+        }
+      ]
+    },
+    {
       "tag": "cwc-tag",
       "dependencies": [],
       "componentClass": "CwcTag",
@@ -1139,6 +1194,21 @@
       "styles": {}
     },
     {
+      "tag": "progress-bar-page",
+      "dependencies": [
+        "cwc-progress-bar"
+      ],
+      "componentClass": "ProgressBarPage",
+      "componentPath": "pages/progress-bar-page/progress-bar-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/progress-bar-page/progress-bar-page.scss"
+          ]
+        }
+      }
+    },
+    {
       "tag": "scb-alert",
       "dependencies": [],
       "componentClass": "ScbAlert",
@@ -1480,6 +1550,7 @@
         "modal-page",
         "multiselect-page",
         "navbar-page",
+        "progress-bar-page",
         "scb-collapse",
         "tag-page",
         "tooltip-page",

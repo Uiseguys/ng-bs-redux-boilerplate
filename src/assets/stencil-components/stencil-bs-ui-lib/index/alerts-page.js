@@ -4103,7 +4103,6 @@ class CwcMarkdown {
         this.marked = initMarkup();
     }
     render() {
-        console.log("here", this.data);
         return (h("div", { innerHTML: this.marked(this.data) }));
     }
     static get is() { return "cwc-markdown"; }
@@ -4308,6 +4307,65 @@ class CwcMultiselect {
     static get properties() { return { "close": { "method": true }, "data": { "type": "Any", "attr": "data" }, "filterValue": { "state": true }, "focusIndex": { "state": true }, "idValue": { "type": String, "attr": "id-value" }, "justAddedLabel": { "state": true }, "labels": { "state": true }, "minSearchLength": { "type": Number, "attr": "min-search-length" }, "optionsShown": { "state": true }, "placeholder": { "type": String, "attr": "placeholder" }, "results": { "state": true }, "searchKey": { "type": String, "attr": "search-key" } }; }
     static get events() { return [{ "name": "multiselectOnSubmit", "method": "multiselectOnSubmit", "bubbles": true, "cancelable": true, "composed": true }]; }
     static get style() { return "cwc-typeahead option:hover {\n  cursor: pointer;\n}\n\n.badge {\n  margin-right: 3px;\n}\n\n.badge span {\n  margin-left: 3px;\n}"; }
+}
+
+class CwcProgressBar {
+    constructor() {
+        this.text = '';
+        this.progressBarType = undefined;
+        this.classes = undefined;
+        this.closable = false;
+        this.striped = false;
+        this.animated = false;
+        this.height = 20;
+        this.progress = 0;
+    }
+    textWatchHandler(val) {
+        this.text = val;
+    }
+    progressWatchHandler(val) {
+        this.progress = val;
+    }
+    watchHandler(val) {
+        this.progressBarType = val;
+    }
+    limit(text, count) {
+        if (text.length > count - 3) {
+            text = text.slice(0, text.length - 3);
+            text += '...';
+        }
+        return text;
+    }
+    getClassList() {
+        let classes = '';
+        if (!!this.progressBarType) {
+            classes = ' bg-' + this.progressBarType;
+        }
+        else {
+            classes = ' bg-primary';
+        }
+        if (this.striped) {
+            classes += ` progress-bar-striped `;
+        }
+        if (this.animated) {
+            classes += ` progress-bar-animated `;
+        }
+        if (this.classes) {
+            classes += ` ${this.classes} `;
+        }
+        if (this.closable) {
+            classes += ' closable';
+        }
+        return classes;
+    }
+    render() {
+        return (h("div", null,
+            h("div", { class: "progress", style: { height: this.height + 'px' } },
+                h("div", { class: "progress-bar" + this.getClassList(), role: "progressbar", style: { width: this.progress + '%' } }, this.limit(this.text, this.height)))));
+    }
+    static get is() { return "cwc-progress-bar"; }
+    static get properties() { return { "animated": { "type": Boolean, "attr": "animated" }, "classes": { "type": String, "attr": "classes" }, "closable": { "type": Boolean, "attr": "closable" }, "height": { "type": Number, "attr": "height" }, "progress": { "type": Number, "attr": "progress", "watchCallbacks": ["progressWatchHandler"] }, "progressBarType": { "type": "Any", "attr": "progress-bar-type", "watchCallbacks": ["watchHandler"] }, "striped": { "type": Boolean, "attr": "striped" }, "text": { "type": String, "attr": "text", "watchCallbacks": ["textWatchHandler"] } }; }
+    static get style() { return ""; }
 }
 
 class StencilComponent$1 {
@@ -31506,6 +31564,114 @@ class NavbarPage {
     static get is() { return "navbar-page"; }
 }
 
+class ProgressBarPage {
+    constructor() {
+        this.progressBarTypes = [
+            'primary',
+            'secondary',
+            'success',
+            'danger',
+            'warning',
+            'info',
+            'light',
+            'dark',
+        ];
+    }
+    render() {
+        return [
+            h("div", { class: "container mb-5" },
+                h("h1", { class: "display-4 " }, "Progress Bar component"),
+                h("h3", null, "API"),
+                h("h4", { class: "my-3" }, "Props"),
+                h("table", null,
+                    h("thead", null,
+                        h("tr", null,
+                            h("th", null, "Prop"),
+                            h("th", null, "PropType"),
+                            h("th", null, "Required?"),
+                            h("th", null, "defaultValue"),
+                            h("th", null, "Description"))),
+                    h("tbody", null,
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "text")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "yes"),
+                            h("td", null,
+                                h("code", null, "''")),
+                            h("td", null, "String to render inside Progress Bar.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "height")),
+                            h("td", null,
+                                h("code", null, "number")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "25")),
+                            h("td", null, "Trims text to maximum length. Full Progress Bar text still available through hover tooltip")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "progressBarType")),
+                            h("td", null,
+                                h("code", null, "BootstrapThemeColor")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "'primary'")),
+                            h("td", null, "Modifier class to change the appearance of the Progress Bar.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "classes")),
+                            h("td", null,
+                                h("code", null, "string")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "''")),
+                            h("td", null, "Additional classes to add to the Progress Bar element.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "striped")),
+                            h("td", null,
+                                h("code", null, "boolean")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "false")),
+                            h("td", null, "Makes Progress Bar striped.")),
+                        h("tr", null,
+                            h("td", null,
+                                h("code", null, "animated")),
+                            h("td", null,
+                                h("code", null, "boolean")),
+                            h("td", null, "no"),
+                            h("td", null,
+                                h("code", null, "false")),
+                            h("td", null, "Makes Progress Bar animated.")))),
+                h("h3", { class: "mt-4" }, "Usage"),
+                h("h4", { class: "mt-3" }, "Basic usage"),
+                h("cwc-progress-bar", { text: 'Holla link', progress: 10 }),
+                h("code", { class: "mb-3 d-block p-3" }, "<cwc-progress-bar text='Holla link' />"),
+                h("h4", { class: "mt-3" }, "Bootstrap styles"),
+                (() => {
+                    return this.progressBarTypes.map(type => h("cwc-progress-bar", { class: "mx-1", text: 'Progress Bar ' + type, progressBarType: type, progress: 80 }));
+                })(),
+                h("code", { class: "mb-3 d-block p-3" }, "<cwc-progress-bar text='Holla link' progressBarType='primary | secondary | success etc.' />"),
+                h("h4", { class: "mt-3" }, "Max text length"),
+                h("cwc-progress-bar", { class: "mx-1", text: 'Lorem ipsum dolor sir amet', height: 10, progress: 50 }),
+                h("code", { class: "mb-3 d-block p-3" }, "<cwc-progress-bar text='Lorem ipsum dolor sir amet' height={10} />"),
+                h("h4", { class: "mt-3" }, "Rounded link tag with image"),
+                h("code", { class: "mb-3 d-block p-3" },
+                    "<cwc-progress-bar text='Stencil'",
+                    h("br", null),
+                    "striped={true} animated={true} />"),
+                h("cwc-progress-bar", { class: "mx-1", text: 'Stencil', striped: true, animated: true, progress: 20 }),
+                h("cwc-progress-bar", { class: "mx-1", text: 'Angular', striped: true, animated: true, progress: 30 }),
+                h("cwc-progress-bar", { class: "mx-1", text: 'React', striped: true, animated: true, progress: 40 }))
+        ];
+    }
+    static get is() { return "progress-bar-page"; }
+    static get style() { return "td,\nth {\n  padding: 4px;\n}"; }
+}
+
 class ScbAlert {
     constructor() {
         this.dismissible = false;
@@ -32348,6 +32514,13 @@ class StencilBootstrapDemo {
                 showOnInit: false
             },
             {
+                cardHeaderId: 'progressBarHeaderId',
+                cardBodyId: 'progressBarCollapse',
+                cardHeaderContent: 'Progress bar Component',
+                cardBodyContent: '<progress-bar-page></progress-bar-page>',
+                showOnInit: false
+            },
+            {
                 cardHeaderId: 'typeaHeadHeaderId',
                 cardBodyId: 'typeaHeadCollapse',
                 cardHeaderContent: 'Typeahead Component',
@@ -32832,4 +33005,4 @@ class VideoPlayerPage {
     static get is() { return "video-player-page"; }
 }
 
-export { AlertsPage, BadgePage, CollapsePage, StencilComponent as CwcDropdown, CwcMarkdown, CwcMultiselect, StencilComponent$1 as DropdownPage, FclImagePage, FclVideoPLayer as FclVideoPlayer, ListPage, MarkdownPage, ModalPage, MultiselectPage, NavbarPage, ScbAlert, ScbBreadcrumb, ScbModal, ScbNavbar, ScbTooltip, StencilBootstrapDemo, TagPage, TolltipPage as TooltipPage, StencilComponent$2 as TypeaheadPage, VideoPlayerPage };
+export { AlertsPage, BadgePage, CollapsePage, StencilComponent as CwcDropdown, CwcMarkdown, CwcMultiselect, CwcProgressBar, StencilComponent$1 as DropdownPage, FclImagePage, FclVideoPLayer as FclVideoPlayer, ListPage, MarkdownPage, ModalPage, MultiselectPage, NavbarPage, ProgressBarPage, ScbAlert, ScbBreadcrumb, ScbModal, ScbNavbar, ScbTooltip, StencilBootstrapDemo, TagPage, TolltipPage as TooltipPage, StencilComponent$2 as TypeaheadPage, VideoPlayerPage };
