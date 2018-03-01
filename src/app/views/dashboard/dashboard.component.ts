@@ -42,6 +42,7 @@ export class DashbaordComponent implements OnInit {
       }
     }
   };
+  markdownContent: String = '### hello';
   constructor(private dashboardActions: DashboardActions) {}
 
   ngOnInit() {

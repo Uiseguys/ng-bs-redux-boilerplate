@@ -37,6 +37,15 @@
       "shadow": true
     },
     {
+      "tag": "collapse-page",
+      "dependencies": [
+        "scb-collapse"
+      ],
+      "componentClass": "CollapsePage",
+      "componentPath": "pages/collapse-page/collapse-page.js",
+      "styles": {}
+    },
+    {
       "tag": "cwc-dropdown",
       "dependencies": [],
       "componentClass": "StencilComponent",
@@ -252,6 +261,30 @@
       "events": [
         {
           "event": "onBottomReach"
+        }
+      ]
+    },
+    {
+      "tag": "cwc-markdown",
+      "dependencies": [],
+      "componentClass": "CwcMarkdown",
+      "componentPath": "components/cwc-markdown/cwc-markdown.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/cwc-markdown/cwc-markdown.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "data",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "marked"
         }
       ]
     },
@@ -832,6 +865,21 @@
       ]
     },
     {
+      "tag": "markdown-page",
+      "dependencies": [
+        "cwc-markdown"
+      ],
+      "componentClass": "MarkdownPage",
+      "componentPath": "pages/markdown-page/markdown-page.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "pages/markdown-page/markdown-page.scss"
+          ]
+        }
+      }
+    },
+    {
       "tag": "modal-page",
       "dependencies": [
         "scb-modal"
@@ -1173,6 +1221,22 @@
       ]
     },
     {
+      "tag": "scb-collapse",
+      "dependencies": [],
+      "componentClass": "ScbCollapse",
+      "componentPath": "components/scb-collapse/scb-collapse.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "collapseid",
+          "type": "String"
+        },
+        {
+          "name": "items"
+        }
+      ]
+    },
+    {
       "tag": "scb-file-input",
       "dependencies": [],
       "componentClass": "ScbFileInput",
@@ -1404,9 +1468,22 @@
     {
       "tag": "stencil-bootstrap-demo",
       "dependencies": [
+        "alerts-page",
+        "badge-page",
+        "breadcrumb-page",
+        "collapse-page",
+        "dropdown-page",
+        "fcl-image-page",
+        "form-page",
+        "list-page",
+        "markdown-page",
         "modal-page",
+        "multiselect-page",
         "navbar-page",
+        "scb-collapse",
+        "tag-page",
         "tooltip-page",
+        "typeahead-page",
         "video-player-page"
       ],
       "componentClass": "StencilBootstrapDemo",

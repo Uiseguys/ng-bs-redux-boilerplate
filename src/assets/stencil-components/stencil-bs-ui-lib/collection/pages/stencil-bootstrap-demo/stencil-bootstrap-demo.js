@@ -1,4 +1,120 @@
 export class StencilBootstrapDemo {
+    constructor() {
+        this.cards = [
+            {
+                cardHeaderId: 'navbarHeading',
+                cardBodyId: 'navbarCollapse',
+                cardHeaderContent: 'Navbar Component',
+                cardBodyContent: '<navbar-page></navbar-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'collapseHeading',
+                cardBodyId: 'collapseCollapse',
+                cardHeaderContent: 'Collapse Component',
+                cardBodyContent: '<collapse-page></collapse-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'tooltipHeading',
+                cardBodyId: 'tooltipCollapse',
+                cardHeaderContent: 'Tooltip Component',
+                cardBodyContent: '<tooltip-page></tooltip-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'modalHeading',
+                cardBodyId: 'modalCollapse',
+                cardHeaderContent: 'Modal Component',
+                cardBodyContent: '<modal-page></modal-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'videoHeaderId',
+                cardBodyId: 'videoCollapse',
+                cardHeaderContent: 'Video Component',
+                cardBodyContent: '<video-player-page></video-player-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'alertHeaderId',
+                cardBodyId: 'alertCollapse',
+                cardHeaderContent: 'Alert Component',
+                cardBodyContent: '<alerts-page></alerts-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'badgeHeaderId',
+                cardBodyId: 'badgeCollapse',
+                cardHeaderContent: 'Badge Component',
+                cardBodyContent: '<badge-page></badge-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'breadcrumbHeaderId',
+                cardBodyId: 'breadcrumbCollapse',
+                cardHeaderContent: 'Breadcrumb Component',
+                cardBodyContent: '<breadcrumb-page></breadcrumb-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'dropdownHeaderId',
+                cardBodyId: 'dropdownCollapse',
+                cardHeaderContent: 'Dropdown Component',
+                cardBodyContent: '<dropdown-page></dropdown-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'fclImageHeaderId',
+                cardBodyId: 'fclImageCollapse',
+                cardHeaderContent: 'Fcl Image Component',
+                cardBodyContent: '<fcl-image-page></fcl-image-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'formHeaderId',
+                cardBodyId: 'formCollapse',
+                cardHeaderContent: 'Form Component',
+                cardBodyContent: '<form-page></form-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'listHeaderId',
+                cardBodyId: 'listCollapse',
+                cardHeaderContent: 'List Component',
+                cardBodyContent: '<list-page></list-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'multiselectHeaderId',
+                cardBodyId: 'multiselectCollapse',
+                cardHeaderContent: 'Multiselect Component',
+                cardBodyContent: '<multiselect-page></list-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'tagHeaderId',
+                cardBodyId: 'tagCollapse',
+                cardHeaderContent: 'Tag Component',
+                cardBodyContent: '<tag-page></list-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'markdownHeaderId',
+                cardBodyId: 'markdownCollapse',
+                cardHeaderContent: 'Markdown Component',
+                cardBodyContent: '<markdown-page></list-page>',
+                showOnInit: false
+            },
+            {
+                cardHeaderId: 'typeaHeadHeaderId',
+                cardBodyId: 'typeaHeadCollapse',
+                cardHeaderContent: 'Typeahead Component',
+                cardBodyContent: '<typeahead-page></list-page>',
+                showOnInit: false
+            }
+        ];
+    }
     render() {
         return (h("div", { class: "container-fluid" },
             h("div", { class: "row" },
@@ -10,35 +126,7 @@ export class StencilBootstrapDemo {
                         " <3"))),
             h("div", { class: "row" },
                 h("div", { class: "col-lg-12" },
-                    h("div", { id: "accordion" },
-                        h("div", { class: "card" },
-                            h("div", { class: "card-header", id: "navigationComponent" },
-                                h("h5", { class: "mb-0" },
-                                    h("button", { class: "btn btn-link", "data-toggle": "collapse", "data-target": "#navigationCollapse", "aria-expanded": "true", "aria-controls": "navigationCollapse" }, "Navigation Component"))),
-                            h("div", { id: "navigationCollapse", class: "collapse", "aria-labelledby": "navigationComponent", "data-parent": "#accordion" },
-                                h("div", { class: "card-body" },
-                                    h("navbar-page", null)))),
-                        h("div", { class: "card" },
-                            h("div", { class: "card-header", id: "tooltipComponent" },
-                                h("h5", { class: "mb-0" },
-                                    h("button", { class: "btn btn-link", "data-toggle": "collapse", "data-target": "#tooltipCollapse", "aria-expanded": "true", "aria-controls": "tooltipCollapse" }, "Tooltip Component"))),
-                            h("div", { id: "tooltipCollapse", class: "collapse", "aria-labelledby": "tooltipComponent", "data-parent": "#accordion" },
-                                h("div", { class: "card-body" },
-                                    h("tooltip-page", null)))),
-                        h("div", { class: "card" },
-                            h("div", { class: "card-header", id: "modalComponent" },
-                                h("h5", { class: "mb-0" },
-                                    h("button", { class: "btn btn-link", "data-toggle": "collapse", "data-target": "#modalCollapse", "aria-expanded": "true", "aria-controls": "modalCollapse" }, "Modal Component"))),
-                            h("div", { id: "modalCollapse", class: "collapse", "aria-labelledby": "modalComponent", "data-parent": "#accordion" },
-                                h("div", { class: "card-body" },
-                                    h("modal-page", null)))),
-                        h("div", { class: "card" },
-                            h("div", { class: "card-header", id: "videoPlayerComponent" },
-                                h("h5", { class: "mb-0" },
-                                    h("button", { class: "btn btn-link", "data-toggle": "collapse", "data-target": "#videoPlayerCollapse", "aria-expanded": "true", "aria-controls": "videoPlayerCollapse" }, "Video player Component"))),
-                            h("div", { id: "videoPlayerCollapse", class: "collapse", "aria-labelledby": "videoPlayerComponent", "data-parent": "#accordion" },
-                                h("div", { class: "card-body" },
-                                    h("video-player-page", null)))))))));
+                    h("scb-collapse", { collapseid: "mainCollapse", items: this.cards })))));
     }
     static get is() { return "stencil-bootstrap-demo"; }
 }
