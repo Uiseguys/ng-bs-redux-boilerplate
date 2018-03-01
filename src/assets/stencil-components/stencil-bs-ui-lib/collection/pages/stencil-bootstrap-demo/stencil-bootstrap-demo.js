@@ -107,6 +107,13 @@ export class StencilBootstrapDemo {
                 showOnInit: false
             },
             {
+                cardHeaderId: 'progressBarHeaderId',
+                cardBodyId: 'progressBarCollapse',
+                cardHeaderContent: 'Progress bar Component',
+                cardBodyContent: '<progress-bar-page></progress-bar-page>',
+                showOnInit: false
+            },
+            {
                 cardHeaderId: 'typeaHeadHeaderId',
                 cardBodyId: 'typeaHeadCollapse',
                 cardHeaderContent: 'Typeahead Component',

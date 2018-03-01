@@ -5,7 +5,6 @@ export class CwcMarkdown {
         this.marked = initMarkup();
     }
     render() {
-        console.log("here", this.data);
         return (h("div", { innerHTML: this.marked(this.data) }));
     }
     static get is() { return "cwc-markdown"; }
