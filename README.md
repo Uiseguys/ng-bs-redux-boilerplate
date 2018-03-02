@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## Features
+
+Redux data-handling
+Redux based routing
+Redux based user tracking / diagnostics
+uses i18next service
+uses StencilJS based UI library
+localStorage
+navigation bar
+environment/feature detection
+automatic changelog generation and display in about page
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
