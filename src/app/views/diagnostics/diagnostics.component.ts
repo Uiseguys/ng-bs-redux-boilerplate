@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { loadState } from '../../shared/localStorage/localStorage'
+import { loadState } from '../../shared/localStorage/localStorage';
 
 @Component({
     selector: 'app-diagnostics',

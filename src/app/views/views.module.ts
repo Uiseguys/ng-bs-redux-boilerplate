@@ -1,5 +1,5 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { TagInputModule } from "ngx-chips";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TagInputModule } from 'ngx-chips';
 import { MarkdownModule } from 'angular2-markdown';
 
 import { DashboardModule } from './dashboard/dashboard.module';

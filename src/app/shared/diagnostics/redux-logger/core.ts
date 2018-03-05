@@ -1,6 +1,6 @@
 import { formatTime } from './helpers';
 import diffLogger from './diff';
-import { loadState, saveState } from '../../localStorage/localStorage'
+import { loadState, saveState } from '../../localStorage/localStorage';
 
 /**
  * Get log level string based on supplied params
@@ -30,8 +30,8 @@ function defaultTitleFormatter(options) {
         const parts = ['action'];
 
         parts.push(`%c${String(action.type)}`);
-        if (timestamp) parts.push(`%c@ ${time}`);
-        if (duration) parts.push(`%c(in ${took.toFixed(2)} ms)`);
+        if (timestamp) { parts.push(`%c@ ${time}`); }
+        if (duration) { parts.push(`%c(in ${took.toFixed(2)} ms)`); }
 
         return parts.join(' ');
     };
@@ -39,9 +39,9 @@ function defaultTitleFormatter(options) {
 
 function saveToLocalStorage(title: string) {
     const key: string = 'redux-logger';
-    const action: string = title.replace(/(%c)/g, "");
-    let currentStorageContainer: any = [];
-    let currentStorageValue: any = loadState(key);
+    const action: string = title.replace(/(%c)/g, '');
+    const currentStorageContainer: any = [];
+    const currentStorageValue: any = loadState(key);
 
     if (currentStorageValue) {
         currentStorageValue.forEach(function (obj) {
@@ -86,8 +86,8 @@ function printBuffer(buffer, options) {
         const titleCSS = colors.title ? `color: ${colors.title(formattedAction)};` : '';
         const headerCSS = ['color: gray; font-weight: lighter;'];
         headerCSS.push(titleCSS);
-        if (options.timestamp) headerCSS.push('color: gray; font-weight: lighter;');
-        if (options.duration) headerCSS.push('color: gray; font-weight: lighter;');
+        if (options.timestamp) { headerCSS.push('color: gray; font-weight: lighter;'); }
+        if (options.duration) { headerCSS.push('color: gray; font-weight: lighter;'); }
         const title = titleFormatter(formattedAction, formattedTime, took);
 
         /* Render */
@@ -95,7 +95,7 @@ function printBuffer(buffer, options) {
             if (isCollapsed) {
                 if (colors.title && isUsingDefaultFormatter) {
                     logger.groupCollapsed(`%c ${title}`, ...headerCSS);
-                } else logger.groupCollapsed(title);
+                } else { logger.groupCollapsed(title); }
             } else if (colors.title && isUsingDefaultFormatter) {
                 logger.group(`%c ${title}`, ...headerCSS);
             } else {
@@ -110,7 +110,7 @@ function printBuffer(buffer, options) {
         const errorLevel = getLogLevel(level, formattedAction, [error, prevState], 'error');
         const nextStateLevel = getLogLevel(level, formattedAction, [nextState], 'nextState');
 
-        let obj: any = {};
+        const obj: any = {};
         obj[formattedAction.type] = {};
 
         if (prevStateLevel) {
@@ -119,7 +119,7 @@ function printBuffer(buffer, options) {
 
                 logger[prevStateLevel]('%c prev state', styles, prevState);
                 obj[formattedAction.type].prevState = prevState; // custom code -- for local storage
-            } else logger[prevStateLevel]('prev state', prevState);
+            } else { logger[prevStateLevel]('prev state', prevState); }
         }
 
         if (actionLevel) {
@@ -128,7 +128,7 @@ function printBuffer(buffer, options) {
 
                 logger[actionLevel]('%c action    ', styles, formattedAction);
                 obj[formattedAction.type].action = formattedAction; // custom code -- for local storage
-            } else logger[actionLevel]('action    ', formattedAction);
+            } else { logger[actionLevel]('action    ', formattedAction); }
         }
 
         if (error && errorLevel) {
@@ -137,7 +137,7 @@ function printBuffer(buffer, options) {
 
                 logger[errorLevel]('%c error     ', styles, error);
                 obj[formattedAction.type].error = error; // custom code -- for local storage
-            } else logger[errorLevel]('error     ', error);
+            } else { logger[errorLevel]('error     ', error); }
         }
 
         if (nextStateLevel) {
@@ -146,7 +146,7 @@ function printBuffer(buffer, options) {
 
                 logger[nextStateLevel]('%c next state', styles, nextState);
                 obj[formattedAction.type].nextState = nextState; // custom code -- for local storage
-            } else logger[nextStateLevel]('next state', nextState);
+            } else { logger[nextStateLevel]('next state', nextState); }
         }
 
         saveToLocalStorage(title);

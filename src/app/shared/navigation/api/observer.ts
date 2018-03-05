@@ -7,7 +7,7 @@ import { Action } from 'redux';
 export class NavigationObservers {
 
   public createEpic(): Epic<Action, any> {
-    return (action$, store) => action$
+    return (action$) => action$
       .ofType('app/navigation/HOME')
       .mapTo({ type: 'app/navigation/DASHBOARD' });
   }
