@@ -35,13 +35,14 @@ export class VideoPlayerPage {
                 }
             }
         };
+        this.theme = 'berlin';
     }
     render() {
         return [
             h("div", null,
                 h("h2", null, "Video Player"),
                 h("div", null,
-                    h("fcl-video-player", { poster: "http://images.telvi.de/images/originals/2017/50/1/319b47392316aa2c54d5fbab.jpg", thumbnail: this.thumbnail },
+                    h("fcl-video-player", { poster: "http://images.telvi.de/images/originals/2017/50/1/319b47392316aa2c54d5fbab.jpg", thumbnail: this.thumbnail, theme: this.theme },
                         h("source", { src: "http://techslides.com/demos/sample-videos/small.mp4", type: 'video/mp4' })),
                     h("section", { class: "box top" },
                         h("div", { class: "ntitle" }, "Summary"),
@@ -130,6 +131,18 @@ export class VideoPlayerPage {
                                         "The ",
                                         h("code", null, "poster"),
                                         " attribute specifies an image shown while downloading")))),
+                        h("div", { class: "details" },
+                            h("div", { class: "details-name" },
+                                h("p", null,
+                                    h("code", null, "theme"))),
+                            h("div", { class: "details-info" },
+                                h("p", null,
+                                    h("code", null, "string")),
+                                h("marked-element", null,
+                                    h("p", null,
+                                        "The ",
+                                        h("code", null, "theme"),
+                                        " attribute specifies theme for the video player, Currently we have two theme berlin/moskau")))),
                         h("div", { class: "details" },
                             h("div", { class: "details-name" },
                                 h("p", null,

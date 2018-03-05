@@ -842,6 +842,10 @@
           "type": "String"
         },
         {
+          "name": "theme",
+          "type": "String"
+        },
+        {
           "name": "thumbnail",
           "type": "Any"
         }

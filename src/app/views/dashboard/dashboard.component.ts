@@ -43,6 +43,7 @@ export class DashbaordComponent implements OnInit {
     }
   };
   progress: any = 10;
+  theme: String = 'berlin';
   progressBarText: String = '50';
   progressBarType: String = 'success';
   progressBarStriped: boolean = true;

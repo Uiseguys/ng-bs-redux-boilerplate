@@ -3,6 +3,7 @@ import initThumbnail from '@divsbhalala/video-js-thumbnails';
 export class FclVideoPLayer {
     constructor() {
         this.poster = null;
+        this.theme = null;
         this.thumbnail = null;
         this.controls = true;
         this.autoPlay = false;
@@ -16,9 +17,12 @@ export class FclVideoPLayer {
         this.el.querySelector("fcl-image").style.display = 'none';
         this.el.querySelector("video").style.display = 'block';
     }
+    getClassList() {
+        return this.theme || 'default';
+    }
     render() {
         if (this.poster != null && this.toggle === false) {
-            return (h("div", { class: "fcl-video-class" },
+            return (h("div", { class: "fcl-video-class theme-" + this.getClassList() },
                 h("fcl-image", { class: "video-img-block", onClick: () => this.toggleClick(), brokenUrl: "assets/img/broken-image.png", src: this.poster }),
                 h("video", { class: "video-js vjs-default-skin" },
                     h("slot", null))));
@@ -27,7 +31,7 @@ export class FclVideoPLayer {
             if (this.poster != null) {
                 this.el.getElementsByTagName('video')[0].play();
             }
-            return (h("div", { class: "fcl-video-class" },
+            return (h("div", { class: "fcl-video-class theme-" + this.getClassList() },
                 h("video", { class: "video-js vjs-default-skin" },
                     h("slot", null))));
         }
@@ -63,6 +67,6 @@ export class FclVideoPLayer {
         videojs(this.el.getElementsByTagName('video')[0], options);
     }
     static get is() { return "fcl-video-player"; }
-    static get properties() { return { "controls": { "type": Boolean, "attr": "controls" }, "el": { "elementRef": true }, "poster": { "type": String, "attr": "poster" }, "thumbnail": { "type": "Any", "attr": "thumbnail" }, "toggle": { "state": true } }; }
+    static get properties() { return { "controls": { "type": Boolean, "attr": "controls" }, "el": { "elementRef": true }, "poster": { "type": String, "attr": "poster" }, "theme": { "type": String, "attr": "theme" }, "thumbnail": { "type": "Any", "attr": "thumbnail" }, "toggle": { "state": true } }; }
     static get style() { return "/**style-placeholder:fcl-video-player:**/"; }
 }
