@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h:t}=window.index;class s{constructor(){this.type="secondary",this.pill=!1}render(){return this.link?t("a",{class:this.getClassList(),href:this.link},t("slot",null)):t("span",{class:this.getClassList()},t("slot",null))}getClassList(){return{badge:!0,[`badge-${this.type}`]:!0,"badge-pill":this.pill}}static get is(){return"scb-badge"}static get properties(){return{link:{type:String,attr:"link"},pill:{type:Boolean,attr:"pill"},type:{type:"Any",attr:"type"}}}}export{s as ScbBadge};

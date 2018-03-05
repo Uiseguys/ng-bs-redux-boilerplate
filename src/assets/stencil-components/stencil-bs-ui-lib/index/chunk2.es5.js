@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+index.loadBundle("./chunk2.js", ["exports"], function (e) { window.index.h; var o = "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self ? self : {}; e.commonjsGlobal = o, e.commonjsRequire = function () { throw new Error("Dynamic requires are not currently supported by rollup-plugin-commonjs"); }, e.createCommonjsModule = function (e, o) { return e(o = { exports: {} }, o.exports), o.exports; }; });

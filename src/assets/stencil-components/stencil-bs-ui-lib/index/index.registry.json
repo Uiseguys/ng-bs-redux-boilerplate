@@ -1,0 +1,120 @@
+{
+  "namespace": "index",
+  "fsNamespace": "index",
+  "loader": "../index.js",
+  "core": "index.kql7qokf.js",
+  "corePolyfilled": "index.sz5uj5b2.js",
+  "components": {
+    "alerts-page": {
+      "$": "kzvtcwak"
+    },
+    "badge-page": {
+      "$": "kzvtcwak"
+    },
+    "breadcrumb-page": {
+      "$": "w6lqt8ds"
+    },
+    "collapse-page": {
+      "$": "kzvtcwak"
+    },
+    "cwc-dropdown": {
+      "$": "kzvtcwak"
+    },
+    "cwc-infinite-list-watcher": {
+      "$": "kzvtcwak"
+    },
+    "cwc-list": {
+      "$": "kzvtcwak"
+    },
+    "cwc-multiselect": {
+      "$": "kzvtcwak"
+    },
+    "cwc-tag": {
+      "$": "iuwb9ivq"
+    },
+    "cwc-typeahead": {
+      "$": "kzvtcwak"
+    },
+    "dropdown-page": {
+      "$": "kzvtcwak"
+    },
+    "fcl-image": {
+      "$": "yxh5yost"
+    },
+    "fcl-image-page": {
+      "$": "kzvtcwak"
+    },
+    "fcl-video-player": {
+      "$": "kzvtcwak"
+    },
+    "file-input-page": {
+      "$": "kzvtcwak"
+    },
+    "form-page": {
+      "$": "w6lqt8ds"
+    },
+    "list-page": {
+      "$": "kzvtcwak"
+    },
+    "modal-page": {
+      "$": "kzvtcwak"
+    },
+    "multiselect-page": {
+      "$": "kzvtcwak"
+    },
+    "my-checkbox": {
+      "$": "w6lqt8ds"
+    },
+    "my-dropdown": {
+      "$": "w6lqt8ds"
+    },
+    "my-dynamic-form": {
+      "$": "w6lqt8ds"
+    },
+    "my-input": {
+      "$": "w6lqt8ds"
+    },
+    "navbar-page": {
+      "$": "kzvtcwak"
+    },
+    "scb-alert": {
+      "$": "kzvtcwak"
+    },
+    "scb-badge": {
+      "$": "wuqxrloe"
+    },
+    "scb-breadcrumb": {
+      "$": "kzvtcwak"
+    },
+    "scb-collapse": {
+      "$": "ydj9ascy"
+    },
+    "scb-file-input": {
+      "$": "kzvtcwak"
+    },
+    "scb-modal": {
+      "$": "kzvtcwak"
+    },
+    "scb-navbar": {
+      "$": "kzvtcwak"
+    },
+    "scb-tooltip": {
+      "$": "kzvtcwak"
+    },
+    "stencil-bootstrap-demo": {
+      "$": "kzvtcwak"
+    },
+    "tag-page": {
+      "$": "kzvtcwak"
+    },
+    "tooltip-page": {
+      "$": "kzvtcwak"
+    },
+    "typeahead-page": {
+      "$": "kzvtcwak"
+    },
+    "video-player-page": {
+      "$": "kzvtcwak"
+    }
+  }
+}
