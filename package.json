@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --aot",
     "build": "npm version patch && node ./replace.build.ts && ng build --prod",
     "test": "ng test",
     "test-build": "ng build --prod",
