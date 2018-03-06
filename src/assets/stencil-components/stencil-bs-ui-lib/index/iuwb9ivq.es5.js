@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-index.loadBundle("iuwb9ivq",["exports","./chunk1.js","./chunk3.js"],function(e,c,i){window.index.h,e.CwcInfiniteListWatcher=c.CwcInfiniteListWatcher,e.CwcList=c.CwcList,e.CwcTypeahead=c.CwcTypeahead,e.CwcTag=i.CwcTag,Object.defineProperty(e,"__esModule",{value:!0})});

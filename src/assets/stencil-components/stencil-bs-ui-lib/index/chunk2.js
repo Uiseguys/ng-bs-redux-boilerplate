@@ -1,2 +1,16 @@
 /*! Built with http://stenciljs.com */
-const{h:e}=window.index;var n="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function o(){throw new Error("Dynamic requires are not currently supported by rollup-plugin-commonjs")}function r(e,n){return e(n={exports:{}},n.exports),n.exports}export{n as commonjsGlobal,o as commonjsRequire,r as createCommonjsModule};
+const { h } = window.index;
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
+}
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+export { commonjsGlobal, commonjsRequire, createCommonjsModule };

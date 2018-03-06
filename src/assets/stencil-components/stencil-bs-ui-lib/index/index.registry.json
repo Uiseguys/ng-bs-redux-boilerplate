@@ -2,119 +2,131 @@
   "namespace": "index",
   "fsNamespace": "index",
   "loader": "../index.js",
-  "core": "index.kql7qokf.js",
-  "corePolyfilled": "index.sz5uj5b2.js",
+  "core": "index.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
   "components": {
     "alerts-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "badge-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "breadcrumb-page": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "collapse-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "cwc-dropdown": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "cwc-infinite-list-watcher": {
-      "$": "kzvtcwak"
+      "$": "cwc-infinite-list-watcher"
     },
     "cwc-list": {
-      "$": "kzvtcwak"
+      "$": "cwc-infinite-list-watcher"
+    },
+    "cwc-markdown": {
+      "$": "alerts-page"
     },
     "cwc-multiselect": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
+    },
+    "cwc-progress-bar": {
+      "$": "alerts-page"
     },
     "cwc-tag": {
-      "$": "iuwb9ivq"
+      "$": "cwc-tag"
     },
     "cwc-typeahead": {
-      "$": "kzvtcwak"
+      "$": "cwc-infinite-list-watcher"
     },
     "dropdown-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "fcl-image": {
-      "$": "yxh5yost"
+      "$": "fcl-image"
     },
     "fcl-image-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "fcl-video-player": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "file-input-page": {
-      "$": "kzvtcwak"
+      "$": "file-input-page"
     },
     "form-page": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "list-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
+    },
+    "markdown-page": {
+      "$": "alerts-page"
     },
     "modal-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "multiselect-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "my-checkbox": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "my-dropdown": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "my-dynamic-form": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "my-input": {
-      "$": "w6lqt8ds"
+      "$": "breadcrumb-page"
     },
     "navbar-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
+    },
+    "progress-bar-page": {
+      "$": "alerts-page"
     },
     "scb-alert": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "scb-badge": {
-      "$": "wuqxrloe"
+      "$": "scb-badge"
     },
     "scb-breadcrumb": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "scb-collapse": {
-      "$": "ydj9ascy"
+      "$": "scb-collapse"
     },
     "scb-file-input": {
-      "$": "kzvtcwak"
+      "$": "file-input-page"
     },
     "scb-modal": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "scb-navbar": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "scb-tooltip": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "stencil-bootstrap-demo": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "tag-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "tooltip-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "typeahead-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     },
     "video-player-page": {
-      "$": "kzvtcwak"
+      "$": "alerts-page"
     }
   }
 }
