@@ -13,7 +13,9 @@ export class AboutComponent implements OnInit {
   buildVersion: string;
   content: any = "";
 
-  template = {};
+  template: any = {
+    id: ""
+  };
   constructor(private http: HttpClient) {
     this.http
       .get("assets/CHANGELOG.md", { responseType: "text" })
