@@ -5,12 +5,12 @@
   <ul *ngIf="collection$ | async as todos" id="todos-list">
 
 
-    <cwc-infinite-list-watcher [listSelector]="'#todos-list'"></cwc-infinite-list-watcher>
+    <cwc-infinite-list-watcher [listSelector]="'#todos-list'" [lastItemSelector]="'.todo-last'"></cwc-infinite-list-watcher>
 
 
     <li *ngFor="let todo of todos; index as i; last as isLast">
 
-      <div class="todo" (click)="collectionItemClicked.emit(todo.id)" [ngClass]="{'list-item-last' : isLast}">
+      <div class="todo" (click)="collectionItemClicked.emit(todo.id)" [ngClass]="{'todo-last' : isLast}">
 
         {{ todo.title }}
       </div>
