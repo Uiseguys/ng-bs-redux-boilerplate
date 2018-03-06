@@ -1,5 +1,5 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { TagInputModule } from "ngx-chips";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TagInputModule } from 'ngx-chips';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DiagnosticsModule } from './diagnostics/diagnostics.module';
@@ -18,7 +18,6 @@ import { LocalSettingsActions } from './local-settings/api/actions';
 @NgModule({
   imports: [
     TagInputModule,
-
     // features
     ToDosModule,
 

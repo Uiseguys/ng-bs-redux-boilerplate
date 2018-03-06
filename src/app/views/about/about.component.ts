@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -8,8 +9,17 @@ import { environment } from '../../../environments/environment';
 })
 export class AboutComponent implements OnInit {
   buildVersion: string;
+  content: any = '';
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.http
+      .get('assets/CHANGELOG.md', { responseType: 'text' })
+      .subscribe(res => {
+        // remove all links
+        const patt = /\(http[^)]*\)/gi;
+        this.content = res.toString().replace(patt, '');
+      });
+  }
 
   ngOnInit() {
     console.log('AboutComponent initialized.');

@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Epic } from "redux-observable";
-import "rxjs/add/operator/mapTo";
-import "rxjs/add/operator/mergeMap";
-import "rxjs/add/operator/do";
-import { Action } from "redux";
-import { ToDoActions } from "./actions";
-import { HttpClient } from "@angular/common/http";
-import { todoEndpoint } from "../index";
-import { NgRedux } from "@angular-redux/store";
+import { Injectable } from '@angular/core';
+import { Epic } from 'redux-observable';
+import 'rxjs/add/operator/mapTo';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/do';
+import { Action } from 'redux';
+import { ToDoActions } from './actions';
+import { HttpClient } from '@angular/common/http';
+import { todoEndpoint } from '../index';
+import { NgRedux } from '@angular-redux/store';
 
 /*
 
@@ -32,7 +32,7 @@ export class ToDoObservers {
         .ofType(ToDoActions.OVERVIEW_ACTIVATED)
         .mergeMap(action =>
           this.http
-            .request("GET", todoEndpoint)
+            .request('GET', todoEndpoint)
             .map(response => this.toDoActions.collectionDataReceived(response))
         );
   }
@@ -43,7 +43,7 @@ export class ToDoObservers {
         .ofType(ToDoActions.DETAIL_VIEW_ACTIVATED)
         .mergeMap(action =>
           this.http
-            .request("GET", todoEndpoint + "/" + action.payload)
+            .request('GET', todoEndpoint + '/' + action.payload)
             .map(response => this.toDoActions.detailDataReceived(response))
         );
   }
@@ -53,7 +53,7 @@ export class ToDoObservers {
       action$.ofType(ToDoActions.CREATE_TODO).mergeMap(action =>
         this.http.post(todoEndpoint, action.payload).map(response =>
           this.ngRedux.dispatch({
-            type: "app/navigation/TODOS"
+            type: 'app/navigation/TODOS'
           })
         )
       );
@@ -66,7 +66,7 @@ export class ToDoObservers {
           .put(`${todoEndpoint}/${action.payload.id}`, action.payload.values)
           .map(response =>
             this.ngRedux.dispatch({
-              type: "app/navigation/TODOS"
+              type: 'app/navigation/TODOS'
             })
           )
       );

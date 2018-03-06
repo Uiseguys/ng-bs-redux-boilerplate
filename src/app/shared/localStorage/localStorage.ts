@@ -8,7 +8,7 @@ export function loadState(key: string) {
     } catch (err) {
         return undefined;
     }
-};
+}
 
 export function saveState(key: string, state: any) {
     try {
@@ -17,4 +17,4 @@ export function saveState(key: string, state: any) {
     } catch (err) {
         console.log(err);
     }
-};
+}

@@ -100,7 +100,7 @@ function createLogger(options = {}) {
         printBuffer(logBuffer, Object.assign({}, loggerOptions, { diff }));
         logBuffer.length = 0;
 
-        if (logEntry.error) throw logEntry.error;
+        if (logEntry.error) { throw logEntry.error; }
         return returnedValue;
     };
 }

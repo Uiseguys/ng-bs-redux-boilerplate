@@ -11,9 +11,13 @@
         "assets",
         "favicon.ico",
         {
+          "input": "../CHANGELOG.md",
+          "output": "./assets/CHANGELOG.md"
+        },
+        {
           "glob": "**/*",
           "input": "../node_modules/@ui-guys/stencil-bs-ui-lib/dist",
-          "output": "./assets/stencil-bs-ui-lib"
+          "output": "./assets/stencil-components/stencil-bs-ui-lib"
         }
       ],
       "index": "index.html",

@@ -17,7 +17,7 @@ export class PlaylistCollectionComponent implements OnInit {
   @Output() collectionItemClicked: EventEmitter<any> = new EventEmitter();
 
   onLoadMore(e) {
-    console.log('loadMore event catched!', e)
+    console.log('loadMore event catched!', e);
   }
 
   ngOnInit() {

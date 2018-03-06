@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { createEpicMiddleware } from "redux-observable";
-import { navigationMiddleware } from "../navigation/api/state";
-import { diagnosticsMiddleware } from "../diagnostics/state";
-import { NavigationObservers } from "../navigation/api/observer";
-import { I18nObservers } from "../i18n/observer";
-import { DashboardObservers } from "../../views/dashboard/api/observer";
-import { ToDoObservers } from "../../features/todos/api/observer";
-import { LocalSettingsObservers } from "../../views/local-settings/api/observer";
+import { Injectable } from '@angular/core';
+import { createEpicMiddleware } from 'redux-observable';
+import { navigationMiddleware } from '../navigation/api/state';
+import { diagnosticsMiddleware } from '../diagnostics/state';
+import { NavigationObservers } from '../navigation/api/observer';
+import { I18nObservers } from '../i18n/observer';
+import { DashboardObservers } from '../../views/dashboard/api/observer';
+import { ToDoObservers } from '../../features/todos/api/observer';
+import { LocalSettingsObservers } from '../../views/local-settings/api/observer';
 
 @Injectable()
 export class Middlewares {
