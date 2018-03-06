@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "serve:heroku": "http-server dist",
+    "serve:heroku": "lite-server --baseDir='dist'",
     "heroku-postbuild": "npm run test-build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
@@ -45,6 +45,7 @@
     "i18next-xhr-backend": "^1.5.0",
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
+    "lite-server": "^2.3.0",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "ng2-select2": "^1.0.0-beta.11",
