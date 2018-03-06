@@ -3,7 +3,7 @@
   "fsNamespace": "index",
   "loader": "../index.js",
   "core": "index.core.js",
-  "corePolyfilled": "es5-build-disabled.js",
+  "corePolyfilled": "index.core.pf.js",
   "components": {
     "alerts-page": {
       "$": "alerts-page"
