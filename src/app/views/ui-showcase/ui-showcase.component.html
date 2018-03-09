@@ -52,6 +52,44 @@
                     modalfocus="true"
                     show="true">
                 </scb-modal>
+                <scb-alert type="success">
+                    <h4 class="alert-heading">Well done!</h4>
+                    <p>
+                        Aww yeah, you successfully read this important alert message.
+                        This example text is going to run a bit longer so that you can
+                        see how spacing within an alert works with this kind of content.
+                    </p>
+                    <hr />
+                    <p class="mb-0">
+                        Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                    </p>
+                </scb-alert>
+                <scb-badge>New</scb-badge>
+                <scb-badge pill>New pill</scb-badge>
+                <scb-badge type="success" pill>Success pill</scb-badge>
+                <scb-breadcrumb [items]="breadcrumbItems"></scb-breadcrumb>
+                <scb-collapse
+                    collapseid="collpaseComponent"
+                    [items]="cards">
+                </scb-collapse>
+                <fcl-image brokenUrl="https://s3.amazonaws.com/images.seroundtable.com/invalid-url-1354629517.png" src="https://www.w3schools.com/howto/img_fjords.jpg"></fcl-image>
+                <scb-file-input type="info" class="mb-0"></scb-file-input>
+                <cwc-markdown [data]="markdownContent" ></cwc-markdown>
+                <cwc-multiselect placeholder="Search something e.g. 'Argentina'" [data]="multiSelectData"></cwc-multiselect><cwc-progress-bar class="mx-1" [progressBarType]='progressBarType' [text]='progressBarText' [striped]='progressBarStriped' [animated]='progressBarAnimated' [progress]="progress"></cwc-progress-bar>
+                <cwc-progress-bar class="mx-1" [text]='progressBarText' [striped]='progressBarStriped1' [animated]='progressBarAnimated1' [progress]="40"></cwc-progress-bar>
+                <cwc-tag class="mx-1" text='Stencil' link='https://stenciljs.com/'
+                         closable="true" rounded="true" imgLink='https://stenciljs.com/assets/img/logo.png' ></cwc-tag>
+                <cwc-tag class="mx-1" text='Angular' link='https://angular.io'
+                         closable="true" rounded="true" imgLink='https://cdn.auth0.com/blog/angular2-series/angular2-logo.png' ></cwc-tag>
+                <cwc-tag class="mx-1" text='React' link='https://reactjs.org/'
+                         closable="true" rounded="true" imgLink='http://v.fastcdn.co/u/abda26b9/20243556-0-react-logo.png' ></cwc-tag>
+                    <h3>Google Autocomplete</h3>
+                    <cwc-typeahead googleAutocomplete="true" placeholder="Search for a location e.g 'Berlin'"></cwc-typeahead>
+
+                <fcl-video-player poster="http://images.telvi.de/images/originals/2017/50/1/319b47392316aa2c54d5fbab.jpg" [thumbnail]="thumbnail" [theme]="theme">
+                    <source src="http://techslides.com/demos/sample-videos/small.mp4" type='video/mp4' />
+                </fcl-video-player>
+
             </div>
         </div>
     </div>
