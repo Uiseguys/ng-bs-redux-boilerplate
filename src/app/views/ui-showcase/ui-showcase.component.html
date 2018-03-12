@@ -72,12 +72,14 @@
                 <scb-badge type="success" pill>Success pill</scb-badge>
                 <h2 class="page-header">Breadcrumbs</h2>
                 <scb-breadcrumb [items]="breadcrumbItems"></scb-breadcrumb>
-                <cwc-dropdown id="example1"
+
+                <h2 class="page-header">Dropdown</h2>
+                <!--<cwc-dropdown id="example1"
                               (dropdownPlacement)="formPlacementString()"
                               [triggerOverflow]="exampleTriggerOverflow"
                 >
                     <div slot="dropdown-trigger">
-                        <button class="btn btn-primary ml-5 mt-2" aria-expanded="true"
+                        <button class="btn btn-primary" aria-expanded="false"
                                 type="button">Example dropdown
                         </button>
                     </div>
@@ -90,34 +92,58 @@
                             <a class="dropdown-item" role="presentation" href="#">Third Item</a>
                         </div>
                     </div>
+                </cwc-dropdown>-->
+                <cwc-dropdown id="officialExample">
+                    <button slot="dropdown-trigger" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Example dropdown </button>
+
+                    <div slot="dropdown-menu" class="dropdown-menu">
+                        <a class="dropdown-item" role="presentation" href="#">Static</a>
+                        <a class="dropdown-item" role="presentation" href="#">Dynamic</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                    </div>
                 </cwc-dropdown>
+
+                <h2 class="page-header">Collapse</h2>
                 <scb-collapse
                     collapseid="collpaseComponent"
                     [items]="cards">
                 </scb-collapse>
+
                 <h2 class="page-header">Image</h2>
                 <fcl-image brokenUrl="https://s3.amazonaws.com/images.seroundtable.com/invalid-url-1354629517.png" src="https://www.w3schools.com/howto/img_fjords.jpg"></fcl-image>
+
                 <h2 class="page-header">File Upload</h2>
                 <scb-file-input type="info" class="mb-0"></scb-file-input>
-                <h2 class="page-header">Page header</h2>
+
+                <h2 class="page-header">CWC page list</h2>
                 <cwc-list id="users-boxed"
                           [items]="users2"
                           itemAs='user'
                           [template]="getUserTemplate"
                           wrapperClass='row d-flex justify-content-around mx-0'
                           addClass='my-3'> </cwc-list>
+                <h2 class="page-header">Markdown component</h2>
                 <cwc-markdown [data]="markdownContent" ></cwc-markdown>
+
+                <h2 class="page-header">Multi Select</h2>
+                <cwc-multiselect placeholder="Search something e.g. 'Argentina'" class="border-form-control" [data]="multiSelectData"></cwc-multiselect>
+
                 <h2 class="page-header">Progress Bar</h2>
-                <cwc-multiselect placeholder="Search something e.g. 'Argentina'" [data]="multiSelectData"></cwc-multiselect><cwc-progress-bar class="mx-1" [progressBarType]='progressBarType' [text]='progressBarText' [striped]='progressBarStriped' [animated]='progressBarAnimated' [progress]="progress"></cwc-progress-bar>
+                <cwc-progress-bar class="mx-1" [progressBarType]='progressBarType' [text]='progressBarText' [striped]='progressBarStriped' [animated]='progressBarAnimated' [progress]="progress"></cwc-progress-bar>
                 <cwc-progress-bar class="mx-1" [text]='progressBarText' [striped]='progressBarStriped1' [animated]='progressBarAnimated1' [progress]="40"></cwc-progress-bar>
+
+                <h2 class="page-header">Tags </h2>
                 <cwc-tag class="mx-1" text='Stencil' link='https://stenciljs.com/'
                          closable="true" rounded="true" imgLink='https://stenciljs.com/assets/img/logo.png' ></cwc-tag>
                 <cwc-tag class="mx-1" text='Angular' link='https://angular.io'
                          closable="true" rounded="true" imgLink='https://cdn.auth0.com/blog/angular2-series/angular2-logo.png' ></cwc-tag>
                 <cwc-tag class="mx-1" text='React' link='https://reactjs.org/'
                          closable="true" rounded="true" imgLink='http://v.fastcdn.co/u/abda26b9/20243556-0-react-logo.png' ></cwc-tag>
+
                 <h2 class="page-header">Google Autocomplete</h2>
                     <cwc-typeahead googleAutocomplete="true" placeholder="Search for a location e.g 'Berlin'"></cwc-typeahead>
+
                 <h2 class="page-header">Video Player</h2>
                 <fcl-video-player poster="http://images.telvi.de/images/originals/2017/50/1/319b47392316aa2c54d5fbab.jpg" [thumbnail]="thumbnail" [theme]="theme">
                     <source src="http://techslides.com/demos/sample-videos/small.mp4" type='video/mp4' />
