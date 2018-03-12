@@ -26,8 +26,7 @@ export class StatusComponent {
       Observable.fromEvent(window, 'online').map(() => true),
       Observable.fromEvent(window, 'offline').map(() => false));
     this.isConnected.subscribe((flag) => {
-      console.log("here");
-      // this.dispatcher.isConnected(flag);
+      this.dispatcher.isConnected(flag);
       this.isDismiss = !flag;
     });
 
