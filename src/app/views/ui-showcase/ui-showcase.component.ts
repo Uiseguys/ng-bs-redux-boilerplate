@@ -46,6 +46,7 @@ export class UIShowcaseComponent implements OnInit {
         '\n ### Bug Fixes' +
         '\n * **common:** more detailed info about error' +
         '\n `fix(common): more detailed info about error`';
+    users2: any[] = [];
     thumbnail: any = {
         0: {
             src: 'https://www.w3schools.com/howto/img_fjords.jpg',
@@ -89,6 +90,14 @@ export class UIShowcaseComponent implements OnInit {
     progressBarAnimated: boolean = true;
     progressBarStriped1: boolean = false;
     progressBarAnimated1: boolean = false;
+    exampleTriggerOverflow: boolean = false;
+    examplePlacement: string = 'bottom';
+    exampleAlignment: string = 'start';
+    formPlacementString() {
+        return this.exampleAlignment ?
+            `${this.examplePlacement}-${this.exampleAlignment}` :
+            `${this.examplePlacement}`;
+    }
     getUser2Template() {
         return `<div class="card card-18">
             <img class="card-img-top" src="<%=user.picture.large%>" alt="Card image cap" />
@@ -119,8 +128,42 @@ export class UIShowcaseComponent implements OnInit {
             </div> `;
 
     }
+    getUsersPage(): number {
+        return (this.users2.length) / 10 + 1;
+    }
+    getUsers(count = 10) {
+
+        return new Promise((resolve) => {
+
+            const request = new XMLHttpRequest();
+            request.open('GET', `https://randomuser.me/api/?page=${this.getUsersPage()}&results=${count}&seed=abc`, true);
+            request.onload = () => {
+                if (request.status >= 200 && request.status < 400) {
+                    const data = JSON.parse(request.responseText);
+                    const users = data.results;
+                    resolve(users);
+                } else {
+                    resolve(false);
+                    console.error('Users endpoint can\'t be reached. Status: ', request.status);
+
+                }
+            };
+
+            request.onerror = () => console.error('Users endpoint can\'t be reached.');
+
+            request.send();
+        });
+    }
+    initUsers2Data(count?: number) {
+        this.getUsers(count).then(
+            users =>
+                this.users2 = this.users2.concat(users)
+
+        );
+    }
 
     ngOnInit() {
         console.log('UI Showcase Initialized');
+        this.initUsers2Data(20);
     }
 }

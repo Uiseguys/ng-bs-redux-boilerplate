@@ -68,12 +68,37 @@
                 <scb-badge pill>New pill</scb-badge>
                 <scb-badge type="success" pill>Success pill</scb-badge>
                 <scb-breadcrumb [items]="breadcrumbItems"></scb-breadcrumb>
+                <cwc-dropdown id="example1"
+                              (dropdownPlacement)="formPlacementString()"
+                              [triggerOverflow]="exampleTriggerOverflow"
+                >
+                    <div slot="dropdown-trigger">
+                        <button class="btn btn-primary ml-5 mt-2" aria-expanded="true"
+                                type="button">Example dropdown
+                        </button>
+                    </div>
+
+                    <div slot="dropdown-content">
+                        <div>
+                            <a class="dropdown-item" role="presentation" href="#">First example
+                                item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Second Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                        </div>
+                    </div>
+                </cwc-dropdown>
                 <scb-collapse
                     collapseid="collpaseComponent"
                     [items]="cards">
                 </scb-collapse>
                 <fcl-image brokenUrl="https://s3.amazonaws.com/images.seroundtable.com/invalid-url-1354629517.png" src="https://www.w3schools.com/howto/img_fjords.jpg"></fcl-image>
                 <scb-file-input type="info" class="mb-0"></scb-file-input>
+                <cwc-list id="users-boxed"
+                          [items]="users2"
+                          itemAs='user'
+                          [template]="getUserTemplate"
+                          wrapperClass='row d-flex justify-content-around mx-0'
+                          addClass='my-3'> </cwc-list>
                 <cwc-markdown [data]="markdownContent" ></cwc-markdown>
                 <cwc-multiselect placeholder="Search something e.g. 'Argentina'" [data]="multiSelectData"></cwc-multiselect><cwc-progress-bar class="mx-1" [progressBarType]='progressBarType' [text]='progressBarText' [striped]='progressBarStriped' [animated]='progressBarAnimated' [progress]="progress"></cwc-progress-bar>
                 <cwc-progress-bar class="mx-1" [text]='progressBarText' [striped]='progressBarStriped1' [animated]='progressBarAnimated1' [progress]="40"></cwc-progress-bar>
