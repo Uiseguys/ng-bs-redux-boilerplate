@@ -26,7 +26,8 @@ export class StatusComponent {
       Observable.fromEvent(window, 'online').map(() => true),
       Observable.fromEvent(window, 'offline').map(() => false));
     this.isConnected.subscribe((flag) => {
-      this.dispatcher.isConnected(flag);
+      console.log("here");
+      // this.dispatcher.isConnected(flag);
       this.isDismiss = !flag;
     });
 
@@ -70,6 +71,7 @@ export class StatusComponent {
   }
 
   currentResolution(w: number, h: number) {
+    console.log(`${w}x${h}`);
     this.dispatcher.uaCurrentResolution(`${w}x${h}`);
   }
 }

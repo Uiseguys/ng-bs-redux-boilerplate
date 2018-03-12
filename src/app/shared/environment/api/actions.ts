@@ -9,7 +9,6 @@ export class EnvironmentActions {
   static readonly ENVIRONMENT_UAISTABLETPORTRAIT = 'ENVIRONMENT_UAISTABLETPORTRAIT';
   static readonly ENVIRONMENT_UACURRENTRESOLUTION = 'ENVIRONMENT_UACURRENTRESOLUTION';
 
-  @dispatch()
   public isConnected = (payload: any): any => ({
     type: EnvironmentActions.ENVIRONMENT_CONNECTED,
     payload: payload
