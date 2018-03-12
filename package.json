@@ -68,7 +68,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "@ui-guys/stencil-bs-ui-lib": "0.3.50",
+    "@ui-guys/stencil-bs-ui-lib": "0.3.53",
     "codelyzer": "^4.0.1",
     "current-device": "^0.7.2",
     "jasmine-core": "~2.8.0",
