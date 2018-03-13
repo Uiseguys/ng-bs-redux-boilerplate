@@ -10,10 +10,11 @@ export class DiagnosticsComponent implements OnInit {
     logs: any;
 
     constructor() {
+        console.log('constructor herererer');
         this.logs = loadState('redux-logger');
     }
 
     ngOnInit() {
-
+        console.log('herererer');
     }
 }
