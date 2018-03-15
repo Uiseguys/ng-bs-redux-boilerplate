@@ -6,55 +6,79 @@ import {
   OnChanges,
   OnDestroy,
   OnInit
-} from '@angular/core';
+} from "@angular/core";
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators
-} from '@angular/forms';
-import { CustomValidators } from 'ng2-validation';
+} from "@angular/forms";
+import { CustomValidators } from "ng2-validation";
 
-import { select } from '@angular-redux/store';
-import { ToDoActions } from '../api/actions';
-import { featureId } from '../index';
+import { select } from "@angular-redux/store";
+import { ToDoActions } from "../api/actions";
+import { featureId } from "../index";
 
 @Component({
-  selector: 'app-todo-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: "app-todo-form",
+  templateUrl: "./form.component.html",
+  styleUrls: ["./form.component.scss"]
 })
 export class TodoFormComponent implements OnDestroy, OnChanges, OnInit {
-  @Input('isCreate') isCreate: boolean = false;
-  @Input('initialValue') initialValue: any = {};
+  @Input("isCreate") isCreate: boolean = false;
+  @Input("initialValue") initialValue: any = {};
 
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();
 
   availableTags = [
     {
-      id: 'books',
-      text: 'books'
+      id: "books",
+      text: "books"
     },
     {
-      id: 'movies',
-      text: 'movies'
+      id: "movies",
+      text: "movies"
+    },
+    {
+      id: "personal",
+      text: "personal"
+    },
+    {
+      id: "family",
+      text: "family"
+    },
+    {
+      id: "sports",
+      text: "sports"
+    },
+    {
+      id: "travel",
+      text: "travel"
+    },
+    {
+      id: "recipe",
+      text: "recipe"
+    },
+    {
+      id: "restaurant",
+      text: "restaurant"
     }
   ];
   tagOptions = {
-    width: '100%',
+    width: "100%",
     multiple: true
   };
   tags: any = [];
 
   constructor(fb: FormBuilder, private todoActions: ToDoActions) {
     this.form = fb.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
-      tags: [''],
-      dateCreated: ['', Validators.required],
-      dueDate: ['', Validators.required],
+      title: ["", Validators.required],
+      description: [""],
+      tags: [""],
+      dateCreated: ["", Validators.required],
+      dueDate: ["", Validators.required],
       priority: [
-        '',
+        "",
         Validators.compose([Validators.required, CustomValidators.number])
       ]
     });
@@ -82,23 +106,23 @@ export class TodoFormComponent implements OnDestroy, OnChanges, OnInit {
   }
 
   loadValues() {
-    this.form.controls['title'].setValue(this.initialValue.title);
-    this.form.controls['description'].setValue(this.initialValue.description);
+    this.form.controls["title"].setValue(this.initialValue.title);
+    this.form.controls["description"].setValue(this.initialValue.description);
 
-    this.form.controls['tags'].setValue(this.initialValue.tags);
-    this.tags = this.initialValue.tags ? this.initialValue.tags.split(',') : [];
+    this.form.controls["tags"].setValue(this.initialValue.tags);
+    this.tags = this.initialValue.tags ? this.initialValue.tags.split(",") : [];
 
-    this.form.controls['dateCreated'].setValue(
+    this.form.controls["dateCreated"].setValue(
       this.initialValue.dateCreated
         ? new Date(this.initialValue.dateCreated).toISOString().substring(0, 10)
         : null
     );
-    this.form.controls['dueDate'].setValue(
+    this.form.controls["dueDate"].setValue(
       this.initialValue.dueDate
         ? new Date(this.initialValue.dueDate).toISOString().substring(0, 10)
         : null
     );
-    this.form.controls['priority'].setValue(this.initialValue.priority);
+    this.form.controls["priority"].setValue(this.initialValue.priority || 3);
   }
 
   handleSubmit($event) {
@@ -108,13 +132,15 @@ export class TodoFormComponent implements OnDestroy, OnChanges, OnInit {
       this.form.controls[c].markAsTouched();
     }
 
-    if (!this.form.valid) { return; }
+    if (!this.form.valid) {
+      return;
+    }
 
     this.onSubmit.emit(this.form.value);
   }
 
   handleTagSelect({ data }) {
-    this.form.controls.tags.setValue(data.map(item => item.id).join(','));
+    this.form.controls.tags.setValue(data.map(item => item.id).join(","));
     this.form.controls.tags.markAsTouched();
   }
 }

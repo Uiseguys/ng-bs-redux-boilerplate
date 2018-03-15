@@ -9,9 +9,12 @@ import { loadState } from '../../shared/localStorage/localStorage';
 export class DiagnosticsComponent implements OnInit {
     logs: any;
 
-    constructor() {}
+    constructor() {
+        console.log('constructor herererer');
+        this.logs = loadState('redux-logger');
+    }
 
     ngOnInit() {
-        this.logs = loadState('redux-logger');
+        console.log('herererer');
     }
 }

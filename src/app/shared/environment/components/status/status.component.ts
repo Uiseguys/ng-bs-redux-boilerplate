@@ -70,6 +70,7 @@ export class StatusComponent {
   }
 
   currentResolution(w: number, h: number) {
+    console.log(`${w}x${h}`);
     this.dispatcher.uaCurrentResolution(`${w}x${h}`);
   }
 }
