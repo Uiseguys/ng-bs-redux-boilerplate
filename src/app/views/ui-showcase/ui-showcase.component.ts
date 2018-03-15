@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UIShowcaseComponent implements OnInit {
 
-    constructor() {}
+    constructor() { }
     breadcrumbItems: any = [
         { active: false, href: '/alerts', target: 'blank', title: 'Alerts' },
         { active: false, href: '/badge', target: 'blank', title: 'Badge' },
@@ -93,6 +93,28 @@ export class UIShowcaseComponent implements OnInit {
     exampleTriggerOverflow: boolean = false;
     examplePlacement: string = 'bottom';
     exampleAlignment: string = 'start';
+
+    scheduleResources = [
+        { id: 'a', title: 'Auditorium A' },
+        { id: 'b', title: 'Auditorium B', eventColor: 'green' },
+        { id: 'c', title: 'Auditorium C', eventColor: 'orange' },
+        {
+            id: 'd', title: 'Auditorium D', children: [
+                { id: 'd1', title: 'Room D1' },
+                { id: 'd2', title: 'Room D2' }
+            ]
+        },
+        { id: 'e', title: 'Auditorium E' },
+        { id: 'f', title: 'Auditorium F', eventColor: 'red' }
+    ];
+    scheduleEvents = [
+        { id: '1', resourceId: 'b', start: '2018-02-07T02:00:00', end: '2018-02-07T07:00:00', title: 'event 1' },
+        { id: '2', resourceId: 'c', start: '2018-02-07T05:00:00', end: '2018-02-07T22:00:00', title: 'event 2' },
+        { id: '3', resourceId: 'd', start: '2018-02-06', end: '2018-02-08', title: 'event 3' },
+        { id: '4', resourceId: 'e', start: '2018-02-07T03:00:00', end: '2018-02-07T08:00:00', title: 'event 4' },
+        { id: '5', resourceId: 'f', start: '2018-02-07T00:30:00', end: '2018-02-07T02:30:00', title: 'event 5' }
+    ];
+
     formPlacementString() {
         return this.exampleAlignment ?
             `${this.examplePlacement}-${this.exampleAlignment}` :
@@ -161,6 +183,8 @@ export class UIShowcaseComponent implements OnInit {
 
         );
     }
+
+
 
     ngOnInit() {
         console.log('UI Showcase Initialized');
