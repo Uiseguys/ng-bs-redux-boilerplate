@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { select } from '@angular-redux/store';
 import { DashboardActions } from '../api/actions';
-import {id} from '../dashboard.module';
 import { debug } from 'util';
 
 @Component({
@@ -11,9 +10,8 @@ import { debug } from 'util';
   styleUrls: ['./dashboard-settings.component.scss']
 })
 export class DashboardSettingsComponent {
-
-  @select([id]) public data; // select data from store
-  model: any = { firstName : '' , lastName : ''};
+  @select('dashboard') public data; // select data from store
+  model: any = { firstName: '', lastName: '' };
 
   constructor(private dispatcher: DashboardActions) {}
 
@@ -24,5 +22,4 @@ export class DashboardSettingsComponent {
   onSubmit() {
     this.dispatcher.settingsModified(this.model);
   }
-
 }

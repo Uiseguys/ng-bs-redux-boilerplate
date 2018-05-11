@@ -42,12 +42,12 @@ const i18nextOptions = {
   fallbackLng: localStorage.getItem('lang') || 'en',
   debug: true, // set debug?
   returnEmptyString: false,
-  ns: ['default'],
+  ns: ['default', 'common'],
   defaultNS: 'default',
   backend: {
     loadPath: function(langs, ns) {
       // return 'assets/locales/{{lng}}.{{ns}}.json';
-      return 'http://18.196.175.166:3000/api/Published/361c9e81-8d78-4fff-b53e-21cdc47846c8/{{lng}}/{{ns}}';
+      return 'https://loopback3-i18next.herokuapp.com/api/Published/30d57236-9050-4fe4-88e9-2a3f6d38fd2e/{{lng}}/{{ns}}';
     }
   },
   interpolation: {

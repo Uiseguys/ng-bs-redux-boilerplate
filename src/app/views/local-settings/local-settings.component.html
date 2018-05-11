@@ -10,7 +10,9 @@
   <div *ngIf="settings | async as settings">
     <br />
     <br />
-    <label>{{'Compact View' | i18nextFormat }}</label>
+    <label>
+      <Trans i18nKey="common:Compact View">Compact View</Trans>
+    </label>
     <input #compactViewCB type="checkbox" name="compact_view" [checked]="settings.compactView" (change)="(compactViewCB.checked) ? activateCompactView() : deactivateCompactView()">
   </div>
 
