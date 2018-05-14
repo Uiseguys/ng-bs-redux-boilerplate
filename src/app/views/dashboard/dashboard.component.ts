@@ -50,6 +50,7 @@ export class DashbaordComponent implements OnInit {
   progressBarAnimated: boolean = true;
   progressBarStriped1: boolean = false;
   progressBarAnimated1: boolean = false;
+  autoInit: boolean = false;
   markdownContent: string = '# Header1' +
       ' \n This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.' +
       '\n ## Header 2' +
