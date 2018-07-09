@@ -1647,3 +1647,8 @@ video::-webkit-media-text-track-display {
 nfcl-video-player.hydrated {
   visibility: inherit !important;
 }
+.popper{
+  &.show{
+    display: block;
+  }
+}
