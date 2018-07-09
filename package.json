@@ -70,7 +70,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "@ui-guys/stencil-bs-ui-lib": "^0.4.2",
+    "@ui-guys/stencil-bs-ui-lib": "^0.6.1",
     "codelyzer": "^4.0.1",
     "current-device": "^0.7.2",
     "i18next-scanner": "^2.4.6",
