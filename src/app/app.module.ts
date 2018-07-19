@@ -20,6 +20,7 @@ import * as i18nextLanguageDetector from 'i18next-browser-languagedetector';
  * Platform and Environment providers/directives/pipes
  */
 // import { ENV_PROVIDERS } from './environment';
+import '@ui-guys/stencil-bs-ui-lib/dist/ui-lib';
 
 import { AppComponent } from './app.component';
 import { ViewsModule } from './views/views.module';
@@ -36,7 +37,6 @@ import { LocalSettingsObservers } from './views/local-settings/api/observer';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AsideNavComponent } from './views/dashboard/components/aside-nav/aside-nav.component';
-
 const i18nextOptions = {
   whitelist: ['de', 'en'],
   fallbackLng: localStorage.getItem('lang') || 'en',

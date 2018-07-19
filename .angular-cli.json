@@ -16,7 +16,8 @@
       {
         "glob": "**/*",
         "input": "../node_modules/@ui-guys/stencil-bs-ui-lib/dist",
-        "output": "./assets/stencil-components/stencil-bs-ui-lib"
+        "output": "./",
+        "allowOutsideOutDir": false
       },
       {
         "input": "../node_modules/fullcalendar-scheduler/dist/scheduler.min.css",
@@ -39,7 +40,8 @@
     "scripts": [
       "../node_modules/jquery/dist/jquery.min.js",
       "../node_modules/select2/dist/js/select2.min.js",
-      "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "../node_modules/@ui-guys/stencil-bs-ui-lib/dist/index.js"
     ],
     "environmentSource": "environments/environment.ts",
     "environments": {
